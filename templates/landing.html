@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="why landing-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_dark">Почему именно мы</h2>
+        </div>
+        <div class="col-lg-10 col-lg-offset-1">
+          <ul class="why-ul">
+            <li class="why-ul-li">
+              <div class="row">
+                <div class="col-lg-2">
+                  <div class="why-icon">
+                    <img src="{{ STATIC_URL }}img/why/icon-people.png" alt="Мы не являемся посредником.">
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <p class="why-ul-li__title">Мы не являемся посредником.</p>
+                  <p class="why-ul-li__text">Мы являемся принимающим туроператором, находимся непосредственно в Восточной Африке. Самостоятельно разрабатываем и обслуживаем свои туры, что позволяет экономить до 30% от стоимости тура. Вы застрахованы от овербукинга, отмен экскурсий по личным обстоятельствам гидов, ошибок в планировании маршрута и других неприятностей, которые могут омрачить ваш отдых.</p>
+                </div>
+              </div>
+            </li>
+            <li class="why-ul-li">
+              <div class="row">
+                <div class="col-lg-2">
+                  <div class="why-icon">
+                    <img src="{{ STATIC_URL }}img/why/icon-megaphone.png" alt="Мы говорим по-русски.">
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <p class="why-ul-li__title">Мы говорим по-русски.</p>
+                  <p class="why-ul-li__text">Мы единственный полностью русский туроператор в Восточной Африке.</p>
+                </div>
+              </div>
+            </li>
+            <li class="why-ul-li">
+              <div class="row">
+                <div class="col-lg-2">
+                  <div class="why-icon">
+                    <img src="{{ STATIC_URL }}img/why/icon-24h.png" alt="Мы всегда на связи с Вами! 24 часа в сутки дней в неделю.">
+                  </div>
+                </div>
+                <div class="col-lg-10">
+                  <p class="why-ul-li__title">Мы всегда на связи с Вами! 24 часа в сутки дней в неделю.</p>
+                  <p class="why-ul-li__text">По прибытию в Африку вам будет выдан телефон с местной сим картой для круглосуточной связи с нами. Оператор любезно окажет вам необходимую помощь на русском языке и поможет в переводу в любое время суток.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_white">Совершите самое необычное путешествие в вашей жизни</h2>
+
+          <form class="info-form ticket-form">
+            <input type="text" name="name" class="ticket-form__name" placeholder="Ваше имя">
+            <input type="text" name="email" class="ticket-form__email" placeholder="Ваш e-mail">
+            <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button">Оставить заявку</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="documents landing-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_dark">Наши документы</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for doc in '1234567' %}
+        <div class="col-lg-3 col-xs-4">
+          <div class="documents-item">
+            <a href="{{ STATIC_URL }}img/document_example.jpg" rel="documents-group" class="documents-gallery">
+              <img src="{{ STATIC_URL }}img/document_example.jpg" alt="Пример документа">
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="info2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_white">93% наших клиентов советуют нас друзьям и обращаются к нам
+            повторно!</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="why2 landing-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_dark">Почему выбирают именно нас?</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for item in '123456' %}
+        <div class="col-lg-6">
+          <div class="why2-item">
+            <div class="why2-item-number"><span class="why2-item-number__text">{{ forloop.counter }}</span></div>
+            <p class="why2-item__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium at cum cupiditate dolorem eius id, iste itaque minima, neque, nostrum pariatur repellat reprehenderit sed sunt suscipit tempora ut? Doloremque, perferendis?
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="review">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_white">Впечатления от поездок</h2>
+        </div>
+        <div class="col-lg-12">
+          <div class="review-slider">
+            <ul class="review-slides">
+            {% for item in '1234' %}
+              <li>
+                <div class="review-photo">
+                  <img src="{{ STATIC_URL }}img/review-photo__example.png" alt="Иван Иванович Иванов" class="review-photo__img"/>
+                </div>
+                <div class="review-content">
+                  <p class="review-content__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ea excepturi minima omnis perspiciatis porro qui recusandae ullam voluptatem voluptatum. Ab aliquid asperiores dolores est harum quas quasi reprehenderit totam.
+                  </p>
+                  <span class="review-content__name">Иван Иванович Иванов</span>
+                </div>
+                <div class="clearfix"></div>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="photo landing-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_dark">Фотогаллерея</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for doc in '1234567' %}
+        <div class="col-lg-4 col-xs-6">
+          <div class="photo-item">
+            <a href="{{ STATIC_URL }}img/photo_example.jpg" rel="photo-group" class="photo-gallery">
+              <img src="{{ STATIC_URL }}img/photo_example.jpg" alt="Пример фотографии">
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="capetown">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="landing__title landing__title_white">Кейптаун входит в 5 самых красивых городов мира, обгоняя Париж,
+            а ЮАР в 10 самых посещаемых стран мира.</h2>
+        </div>
+        <div class="col-lg-4 col-lg-offset-4">
+          <form action="" class="vertical-form">
+            <input type="text" name="name" placeholder="Ваше имя" class="vertical-form__name">
+            <input type="text" name="email" placeholder="Ваш email" class="vertical-form__email">
+            <textarea name="subject" placeholder="Ваше сообщение"  class="vertical-form__subject"></textarea>
+            <input type="submit" value="Оставить заявку" class="btn  btn-warning vertical-form__submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

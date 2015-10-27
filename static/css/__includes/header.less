@@ -1,0 +1,101 @@
+.header {
+  background-image: url(../img/header-page__bg.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  &-home {
+    background-image: url(../img/header__bg.jpg);
+  }
+  &-logotype {
+    height: 100%;
+    vertical-align: top;
+  }
+  a {
+    text-shadow: 1px 1px 1px #333;
+  }
+  &-text {
+    padding-top: 180px;
+    padding-bottom: 200px;
+    @media (max-width: @screen-sm) {
+      padding: 20px 0;
+    }
+  }
+  &-h1 {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    @media (max-width: @screen-sm) {
+      font-size: 30px;
+    }
+    &_big {
+      font-size: 50px;
+      color: #ff3333;
+      text-shadow: 2px 2px 2px #ffff00;
+      @media (max-width: @screen-sm) {
+        font-size: 36px;
+      }
+    }
+  }
+}
+.navbar {
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  &-brand {
+    height: 120px;
+    line-height: 120px;
+    @media (max-width: @screen-sm) {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+.nav {
+  li {
+    text-align: center;
+    a {
+      @media (max-width: @screen-sm) {
+        padding: 5px;
+        margin-bottom: 1px;
+        background: rgba(54, 62, 107, 0.63);
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        height: 60px;
+        opacity: .4;
+        @media (max-width: @screen-sm) {
+          display: none;
+        }
+      }
+    }
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+    //@media (max-width: @screen-sm) {
+    //  display: none;
+    //}
+  }
+}
+#js {
+  &-auth {
+    &-button {
+      color: #ffa500;
+    }
+  }
+}
+//.icon {
+//  &-about {
+//    background-image: url(../img/menu/icon-about.png);
+//    background-repeat: no-repeat;
+//  }
+//}

@@ -1,0 +1,46 @@
+.ticket {
+  &-modal {
+    &-form {
+      width: 360px;
+    }
+  }
+  &-form {
+    input {
+      margin-right: 65px;
+    }
+    a {
+      line-height: 40px;
+    }
+    input, a {
+      height: 50px;
+      width: 270px;
+      vertical-align: top;
+      border: 0;
+      text-align: center;
+      @media (max-width: @screen-sm) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      &__name, &__email {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.vertical {
+  &-form {
+    input, textarea {
+      width: 100%;
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      height: 50px;
+    }
+    textarea {
+      min-height: 160px;
+    }
+  }
+}

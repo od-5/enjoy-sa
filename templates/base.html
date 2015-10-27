@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titke %}{{ SETUP.meta_title|default:'Главная страница сайта' }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_desc %}{{ SETUP.meta_desc|default:'' }}{% endblock %}">
+  <meta name="keywords" content="{% block meta_key %}{{ SETUP.meta_key|default:'' }}{% endblock %}">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.fancybox.pack.js"></script>
+  <script src="{{ STATIC_URL }}js/notify-combined.min.js"></script>
+  <script src="{{ STATIC_URL }}js/tab.js"></script>
+  <script src="{{ STATIC_URL }}js/common.js"></script>
+  <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+  {% block extra_media %}
+  {% endblock %}
+  {% if SETUP.top_js %}
+    {{ SETUP.top_js }}
+  {% endif %}
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header{% if HOME_PAGE %} header-home{% endif %}">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="col-lg-2">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="{% url 'home' %}">
+                <img alt="Brand" src="{{ STATIC_URL }}img/logo.png" class="header-logotype">
+                <span class="clearfix"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <ul class="nav navbar-nav">
+              {% include '__includes/nav.html' %}
+            </ul>
+          </div>
+          <div class="col-lg-2">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#js-modal-auth" id="js-auth-button"><img src="{{ STATIC_URL }}img/menu/icon-login.png" alt="Войти">Войти</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% block head %}
+      {% endblock %}
+      {% if HOME_PAGE %}
+      <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="header-text text-center">
+            <h1 class="header-h1">Хотите совершить сафари-путешествие по Южной Африке и сэкономить до <span
+                class="header-h1_big">30%</span> от стоимости тура?</h1>
+            <a href="#js-modal-ticket" class="btn btn-success btn-lg js-ticket-button">Задать вопрос</a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </header>
+{#    <main class="content">#}
+    {% block content %}
+    {% endblock %}
+{#    </main>#}
+  </div>
+  {% include "__includes/footer.html" %}
+
+
+{% block bottom_js %}
+{% endblock %}
+  
+{% if SETUP.bottom_js %}
+  {{ SETUP.bottom_js }}
+{% endif %}
+
+{% include "__modal/modal-auth.html" %}
+{% include "__modal/modal-ticket.html" %}
+</body>
+</html>

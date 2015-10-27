@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block head %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block content %}
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="page__title">
+          <h1>Экскурсии</h1>
+        </div>
+        <div class="page__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor itaque non quis ut. Accusantium est et fuga impedit modi nam odit temporibus voluptatibus. Alias animi facere neque voluptatem voluptatum.</p>
+        </div>
+        <div class="excurse">
+          {% for item in '123456789' %}
+          <div class="col-lg-4 col-xs-12">
+            <div class="excurse-item">
+              <a href="#" class="excurse-item__link">
+                <div class="excurse-item-cover">
+                  <img src="{{ STATIC_URL }}img/excure-item__cover.jpg" alt="Lorem ipsum dolor sit amet" class="excurse-item-cover__img">
+                </div>
+                <h2 class="excurse-item__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                <div class="excurse-item-desc">
+                  <p class="excurse-item-desc__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, dolores iste. Aliquam at consequatur exercitationem iusto mollitia natus
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+          <div class="clearfix"></div>
+        </div>
+        <div class="text-center">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

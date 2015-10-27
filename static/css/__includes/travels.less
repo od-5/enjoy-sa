@@ -1,0 +1,52 @@
+.travels {
+  padding-top: 30px;
+  &-item {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 5px #333;
+    -moz-box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 5px #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    &:hover {
+      box-shadow: 0 0 5px #ffa500;
+    }
+    &__link {
+      &:hover {
+        text-decoration: none;
+        h2 {
+          color: #ffa500;
+        }
+        p {
+          color: #666;
+        }
+      }
+    }
+    &-cover {
+      &__img {
+        width: 100%;
+      }
+    }
+    &-extra {
+      padding: 10px;
+      color: #999;
+      font-size: 16px;
+      &__date, &__visit, &__comment {
+        padding-right: 5px;
+      }
+      &__visit, &__comment {
+        padding-left: 5px;
+      }
+    }
+    &__title {
+      font-size: 20px;
+      color: #333;
+    }
+    &__text {
+      font-size: 16px;
+      color: #999;
+    }
+  }
+}

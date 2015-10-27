@@ -1,0 +1,62 @@
+.groups {
+  &-item {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 5px #333;
+    -moz-box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 5px #333;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 30px;
+    &-cover {
+      width: 30%;
+      float: left;
+      @media (max-width: @screen-sm) {
+        width: 100%;
+        float: none;
+      }
+      &__img {
+        width: 100%;
+      }
+    }
+    &-content {
+      width: 68%;
+      float: right;
+      @media (max-width: @screen-sm) {
+        width: 100%;
+        float: none;
+      }
+      &__title {
+        color: #333;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 0;
+        height: 80px;
+      }
+    }
+  }
+  .table {
+    margin-bottom: 0;
+    color: #999;
+    &__text {
+      display: inline-block;
+      width: 60%;
+    }
+    .glyphicon {
+      color: #ffa500;
+      padding-right: 10px;
+    }
+    b {
+      color: #333333;
+    }
+    a {
+      float: right;
+      margin-right: 65px;
+      @media (max-width: @screen-sm) {
+        float: right;
+        margin-right: 0;
+      }
+    }
+  }
+}
