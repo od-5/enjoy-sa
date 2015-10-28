@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import patterns, include, url
@@ -8,11 +9,14 @@ from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', TemplateView.as_view(template_name='landing.html'), name='home'),
+    # url(r'^$', TemplateView.as_view(template_name='landing.html'), name='home'),
+    url(r'^$', 'apps.landing.views.home_view', name='home'),
     url(r'^travels/', include('apps.travel.urls', namespace='travels'),),
     url(r'^groups/', include('apps.group.urls', namespace='groups'),),
     url(r'^excurse/', include('apps.excurse.urls', namespace='excurse'),),
+    url(r'^ticket/', include('apps.ticket.urls', namespace='ticket'),),
     # url(r'^blog/', include('blog.urls')),
+    url(r'', include('core.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 )

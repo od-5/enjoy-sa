@@ -28,5 +28,6 @@ SUIT_CONFIG = {
         {'label': u'Заявки', 'icon': 'icon-user', 'models': ('ticket.ticket',)},
         {'label': u'Продажи', 'icon': 'icon-user', 'models': ('ticket.sale',)},
         {'label': u'Портфолио', 'app': 'portfolio'},
+        {'label': u'Landing', 'app': 'landing'},
     ),
 }

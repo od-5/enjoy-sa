@@ -6184,6 +6184,15 @@ h2 {
     padding: 15px;
   }
 }
+label.error {
+  color: #ffa500;
+  font-weight: normal;
+}
+input.error,
+textarea.error {
+  background-color: #ffa;
+  border-color: transparent;
+}
 #js-modal-auth,
 #js-modal-ticket {
   display: none;

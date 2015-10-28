@@ -17,4 +17,5 @@ INSTALLED_APPS = (
     'apps.travel',
     'apps.group',
     'apps.excurse',
+    'apps.landing',
 )

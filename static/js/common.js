@@ -43,5 +43,64 @@ $(function() {
     }
   });
 
+  $.validator.messages.required = "* поле обязательно для заполнения";
+
+  // валидация формы на странице
+  $( ".js-ticket-form" ).validate({
+    rules: {
+      name: {
+        required: true
+      },
+      email: {
+        required: true
+      }
+    },
+    messages: {
+      name: "Введите ваше имя",
+      email: {
+        required: "Введите ваш email для обратной связи",
+        email: "e-mail должен быть вида name@domain.com"
+      }
+    },
+    submitHandler: function(e) {
+      $('.js-ticket-form').ajaxSubmit({
+          success: function(data){
+            console.log(data.success);
+            $.notify(data.success, 'success');
+            $('.js-ticket-form').trigger('reset');
+          }
+      });
+    }
+  });
+
+  // валидация формы на странице
+  $( ".js-modal-ticket-form").validate({
+    rules: {
+      name: {
+        required: true
+      },
+      email: {
+        required: true
+      }
+    },
+    messages: {
+      name: "Введите ваше имя",
+      email: {
+        required: "Введите ваш email для обратной связи",
+        email: "e-mail должен быть вида name@domain.com"
+      }
+    },
+    submitHandler: function(e) {
+      $('.js-modal-ticket-form').ajaxSubmit({
+          success: function(data){
+            console.log(data.success);
+            $.notify(data.success, 'success');
+            $.fancybox.close();
+            $('.js-modal-ticket-form').trigger('reset');
+          }
+      });
+    }
+  });
+
 
 });

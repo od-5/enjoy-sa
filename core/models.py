@@ -121,28 +121,4 @@ class Setup(models.Model):
     meta_desc = models.TextField(verbose_name=u'Описание META_DESCRIPTION', blank=True)
     top_js = models.TextField(verbose_name=u'Скрипты в <HEAD>..</HEAD>', blank=True)
     bottom_js = models.TextField(verbose_name=u'Скрипты перед закрывающим </BODY>', blank=True)
-
-
-class Contacts(models.Model):
-    class Meta:
-        verbose_name = u'Контакты'
-        verbose_name_plural = u'Контакты'
-        app_label = 'core'
-
-    def __unicode__(self):
-        if self.phone:
-            return self.phone
-        elif self.email:
-            return self.email
-        elif self.address:
-            return self.address
-        elif self.skype:
-            return self.skype
-        else:
-            return u'Контакты'
-
-    phone = models.CharField(max_length=30, verbose_name=u'Телефон', blank=True, null=True)
-    email = models.EmailField(max_length=50, verbose_name=u'e-mail', blank=True, null=True)
-    skype = models.CharField(max_length=50, verbose_name=u'Skype', blank=True, null=True)
-    address = models.TextField(verbose_name=u'Адрес', blank=True, null=True)
-    map = models.TextField(verbose_name=u'Код карты', blank=True, null=True)
+    robots_txt = models.TextField(verbose_name=u'robots.txt', blank=True, null=True)

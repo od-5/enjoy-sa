@@ -1,8 +1,8 @@
 <div id="js-modal-ticket">
-  <form action="" class="vertical-form ticket-modal-form">
+  <form action="{% url 'ticket:send' %}" method="post" class="vertical-form ticket-modal-form js-modal-ticket-form">
     <input type="text" name="name" placeholder="Ваше имя" class="vertical-form__name ticket-modal-form__name">
-    <input type="text" name="email" placeholder="Ваш email" class="vertical-form__email ticket-modal-form__email">
-    <textarea name="subject" placeholder="Ваше сообщение"  class="vertical-form__subject"></textarea>
+    <input type="email" name="email" placeholder="Ваш email" class="vertical-form__email ticket-modal-form__email">
+    <textarea name="comment" placeholder="Ваше сообщение"  class="vertical-form__subject"></textarea>
     <input type="submit" value="Оставить заявку" class="btn  btn-warning vertical-form__submit">
   </form>
 </div>
