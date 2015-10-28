@@ -32,9 +32,15 @@
   color: #3e2d84;
   &-ul {
     list-style: none;
+    @media (max-width: @screen-sm) {
+      padding-left: 0;
+    }
     &-li {
       display: block;
       margin: 30px 0;
+      @media (max-width: @screen-sm) {
+        text-align: center;
+      }
       &__title {
         font-weight: bold;
       }
@@ -80,10 +86,18 @@
 .why2 {
   &-item {
     display: table-row;
+    @media (max-width: @screen-sm) {
+      display: block;
+      text-align: center;
+    }
     &-number {
       vertical-align: middle;
       width: 15%;
       display: table-cell;
+      @media (max-width: @screen-sm) {
+        display: block;
+        width: 100%;
+      }
       &__text {
         font-size: 24px;
         font-weight: bold;
@@ -102,6 +116,10 @@
       width: 85%;
       display: table-cell;
       padding: 15px 0;
+      @media (max-width: @screen-sm) {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }

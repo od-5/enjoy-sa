@@ -3205,6 +3205,11 @@ input[type="button"].btn-block {
   line-height: 1.33;
   border-radius: 6px;
 }
+@media (max-width: 768px) {
+  .btn-group-lg > .btn {
+    padding: 15px;
+  }
+}
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
@@ -6174,6 +6179,11 @@ h2 {
 .navbar {
   margin-bottom: 0;
 }
+@media (max-width: 768px) {
+  .btn-lg {
+    padding: 15px;
+  }
+}
 #js-modal-auth,
 #js-modal-ticket {
   display: none;
@@ -6187,7 +6197,7 @@ h2 {
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
 }
 .header-home {
   background-image: url(../img/header__bg.jpg);
@@ -6310,9 +6320,19 @@ h2 {
 .why-ul {
   list-style: none;
 }
+@media (max-width: 768px) {
+  .why-ul {
+    padding-left: 0;
+  }
+}
 .why-ul-li {
   display: block;
   margin: 30px 0;
+}
+@media (max-width: 768px) {
+  .why-ul-li {
+    text-align: center;
+  }
 }
 .why-ul-li__title {
   font-weight: bold;
@@ -6347,10 +6367,22 @@ h2 {
 .why2-item {
   display: table-row;
 }
+@media (max-width: 768px) {
+  .why2-item {
+    display: block;
+    text-align: center;
+  }
+}
 .why2-item-number {
   vertical-align: middle;
   width: 15%;
   display: table-cell;
+}
+@media (max-width: 768px) {
+  .why2-item-number {
+    display: block;
+    width: 100%;
+  }
 }
 .why2-item-number__text {
   font-size: 24px;
@@ -6369,6 +6401,12 @@ h2 {
   width: 85%;
   display: table-cell;
   padding: 15px 0;
+}
+@media (max-width: 768px) {
+  .why2-item__text {
+    display: block;
+    width: 100%;
+  }
 }
 .review {
   background-image: url('../img/review__bg.jpg');
