@@ -6137,6 +6137,11 @@ h2 {
   height: 100%;
   margin-bottom: -100px;
 }
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
 .content {
   padding-bottom: 100px;
   background-color: #fff;
@@ -6211,7 +6216,6 @@ textarea.error {
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-  background-position: center bottom;
 }
 .header-home {
   background-image: url(../img/header__bg.jpg);
@@ -6606,7 +6610,6 @@ textarea.error {
   padding-bottom: 30px;
 }
 .page__text_white {
-  padding-bottom: 270px;
   text-shadow: 1px 1px 1px #333;
   color: #ffffff;
 }
