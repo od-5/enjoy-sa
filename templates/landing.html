@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% load inplace_edit %}
+  {% block extra_media %}
+   {% inplace_toolbar %}
+  {% endblock %}
 {% block content %}
   <section class="why landing-section">
     <div class="container">
@@ -18,8 +22,8 @@
                   </div>
                 </div>
                 <div class="col-lg-10">
-                  <p class="why-ul-li__title">{{ item.name|default:'' }}</p>
-                  <p class="why-ul-li__text">{{ item.text|default:'' }}</p>
+                  <p class="why-ul-li__title">{% inplace_edit "item.name" %}</p>
+                  <p class="why-ul-li__text">{% inplace_edit "item.text" %}</p>
                 </div>
               </div>
             </li>

@@ -19,6 +19,9 @@
   <script src="{{ STATIC_URL }}js/tab.js"></script>
   <script src="{{ STATIC_URL }}js/common.js"></script>
   <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+
+{% load inplace_edit %}
+{% inplace_static %}
   {% block extra_media %}
   {% endblock %}
   {% if SETUP.top_js %}
@@ -45,7 +48,13 @@
           </div>
           <div class="col-lg-2">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#js-modal-auth" id="js-auth-button"><img src="{{ STATIC_URL }}img/menu/icon-login.png" alt="Войти">Войти</a></li>
+              <li>
+              {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}?next=/"><img src="{{ STATIC_URL }}img/menu/icon-logout.png" alt="Выход">Выход</a>
+              {% else %}
+                <a href="#js-modal-auth" id="js-auth-button"><img src="{{ STATIC_URL }}img/menu/icon-login.png" alt="Войти">Войти</a>
+              {% endif %}
+              </li>
             </ul>
           </div>
         </div>

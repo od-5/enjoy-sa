@@ -102,5 +102,72 @@ $(function() {
     }
   });
 
+  // Валидация форм авторизации
+  $( "#js-login-form" ).validate({
+    rules: {
+      username: {
+        required: true
+      },
+      password: {
+        required: true
+      }
+    },
+    messages: {
+      password: "Введите пароль",
+      username: {
+        required: "e-mail должен быть вида name@domain.com",
+        email: "e-mail должен быть вида name@domain.com"
+      }
+    },
+    submitHandler: function(e) {
+      $('#js-login-form').ajaxSubmit({
+          success: function(data){
+            var error = data.error;
+            if (error) {
+              $('#js-login-form').trigger('reset');
+              $.notify(error, 'error');
+            } else {
+              $.fancybox.close();
+              location.reload(true);
+            }
+          }
+      });
+    }
+  });
+
+//  Валидация формы регитрации
+  $( "#js-registration-form" ).validate({
+    rules: {
+      username: {
+        required: true
+      },
+      password: {
+        required: true
+      }
+    },
+    messages: {
+      password: "Введите пароль",
+      username: {
+        required: "e-mail должен быть вида name@domain.com",
+        email: "e-mail должен быть вида name@domain.com"
+      }
+    },
+    submitHandler: function(e) {
+      $('#js-registration-form').ajaxSubmit({
+          success: function(data){
+            var error = data.error;
+            if (error) {
+              $('#js-registration-form').trigger('reset');
+              $.notify(error, 'error');
+            } else {
+              $.notify(data.success, 'success');
+              $.fancybox.close();
+              location.reload(true);
+            }
+          }
+      });
+    }
+  });
+
 
 });

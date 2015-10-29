@@ -12,6 +12,8 @@ INSTALLED_APPS = (
     'imagekit',
     'widget_tweaks',
     'annoying',
+    'inplaceeditform_bootstrap',
+    'inplaceeditform',
     'core',
     'apps.ticket',
     'apps.travel',

@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth.views import logout
 import debug_toolbar
 from django.views.generic import TemplateView
 
@@ -17,7 +18,8 @@ urlpatterns = patterns('',
     url(r'^ticket/', include('apps.ticket.urls', namespace='ticket'),),
     # url(r'^blog/', include('blog.urls')),
     url(r'', include('core.urls')),
-
+    url(r'^accounts/logout/$', logout, name='logout'),
+    url(r'^inplaceeditform/', include('inplaceeditform.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

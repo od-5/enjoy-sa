@@ -61,5 +61,43 @@
         </div>
       </div>
     </div>
+    <div class="authors">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="authors__title">Наши авторы</h3>
+          </div>
+          <div class="authors-list">
+          {% for item in '123' %}
+            <div class="col-lg-6">
+              <div class="authors-list-item">
+                <div class="authors-list-item-avatar">
+                  <img src="{{ STATIC_URL }}img/author__avatar.png" alt="Фёдор Конюхов" class="authors-list-item-avatar__img">
+                </div>
+                <div class="authors-list-item-content">
+                  <span class="authors-list-item-content__name">Фёдор Конюхов</span>
+                  <span class="glyphicon glyphicon-edit"></span>
+                  <span class="authors-list-item-content__article">(10)</span>
+                  <p class="authors-list-item-content__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi consectetur dignissimos distinctio, dolore doloribus ea fugit inventore ipsam iste.
+                  </p>
+                  <a href="#" class="authors-list-item-content__read btn btn-warning">Читать ></a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+            <div class="clearfix"></div>
+          </div>
+          <div class="authors-add">
+          {% if user.is_authenticated %}
+            <a href="#" class="btn btn-success btn-lg">Добавить публикацию</a>
+          {% else %}
+            <p>Для того, что бы стать автором вам нужно <a href="#js-modal-auth" id="js-auth-button">ВОЙТИ</a> в свою учётную запись, либо
+            <a href="#js-modal-auth" id="js-auth-button">ЗАРЕГИСТРИРОВАТЬСЯ</a></p>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}
