@@ -8,3 +8,5 @@ README.md
 /apps/ticket/migrations
 /apps/excurse/migrations
 /apps/landing/migrations
+apps/ticket/migrations/
+core/migrations/
