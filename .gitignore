@@ -2,3 +2,5 @@
 *.pyc
 README.md
 /apps/landing/migrations
+apps/ticket/migrations/
+core/migrations/
