@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page__title">
+            <h1>{{ object.title|default:'' }}</h1>
+          </div>
+          <div class="page-desc">
+            <div class="col-lg-8 col-lg-offset-2">
+              <table class="table">
+                <tr>
+                  <th>Прибытие:</th>
+                  <th>Отъезд:</th>
+                  <th>Забронировано мест:</th>
+                  <th>Количество мест:</th>
+                  <th>Стоимость:</th>
+                </tr>
+                <tr>
+                  <td>{{ object.travel_start|default:''}}</td>
+                  <td>{{ object.travel_end|default:''}}</td>
+                  <td>{{ object.reserved|default:''}}</td>
+                  <td>{{ object.seats|default:''}}</td>
+                  <td>{{ object.price|default:''}}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="page-cover">
+            <img src="{{ object.cover.url }}" alt="{{ object.name|default:'' }}" class="page-cover__img">
+          </div>
+          <div class="page__content">
+            {{ object.description|safe }}
+          </div>
+          <div class="page__button">
+            <a href="#js-modal-ticket" class="btn btn-success btn-lg js-ticket-button" data-group="{{ object.id }}">Присоединиться к группе</a>
+          </div>
+
+        </div>
+      </div>
+{#      {% if object.excursephoto_set.all %}#}
+{#      <div class="row">#}
+{#        <div class="page-gallery">#}
+{#        {% for photo in object.excursephoto_set.all %}#}
+{#          <div class="col-lg-4">#}
+{#            <div class="page-gallery-item">#}
+{#              <a href="{{ photo.image.url }}" rel="photo-group" class="page-gallery__link js-page-gallery" title="{{ photo.name }}">#}
+{#                <img src="{{ photo.image_resize.url }}" class="page-gallery__photo" alt="{{ photo.name }}">#}
+{#              </a>#}
+{#            </div>#}
+{#          </div>#}
+{#          {% endfor %}#}
+{#          <div class="clearfix"></div>#}
+{#        </div>#}
+{#      </div>#}
+{#      {% endif %}#}
+    </div>
+  </div>
+{% endblock %}

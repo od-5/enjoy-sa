@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page__title">
+            <h1>Вопросы и ответы</h1>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        {% if object_list %}
+          {% for object in object_list %}
+          <div class="faq">
+            <div class="faq-question">
+              <div class="col-lg-1">
+                <div class="faq-question-icon">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                </div>
+              </div>
+              <div class="col-lg-11">
+                <div class="faq-question__text">
+                  {{ object.question|linebreaksbr|safe|default:'' }}
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="col-lg-11 col-lg-offset-1">
+                <div class="faq-answer__text">
+                  {{ object.answer|safe|default:'' }}
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          {% endfor %}
+        {% endif %}
+        {% include '__includes/pagination.html' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
