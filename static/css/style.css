@@ -6610,11 +6610,11 @@ textarea.error {
 }
 .page__text {
   font-size: 16px;
-  text-align: center;
   color: #666;
   padding-bottom: 30px;
 }
 .page__text_white {
+  text-align: center;
   text-shadow: 1px 1px 1px #333;
   color: #ffffff;
 }
