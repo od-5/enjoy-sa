@@ -14,10 +14,13 @@ INSTALLED_APPS = (
     'annoying',
     'inplaceeditform_bootstrap',
     'inplaceeditform',
+    'ckeditor',
     'core',
     'apps.ticket',
     'apps.travel',
     'apps.group',
     'apps.excurse',
     'apps.landing',
+    'apps.about',
+    'apps.faq',
 )

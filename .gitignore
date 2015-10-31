@@ -1,6 +1,12 @@
 .idea/
 *.pyc
 README.md
+/apps/faq/migrations
+/apps/about/migrations
+/apps/travel/migrations
+/apps/group/migrations
+/apps/ticket/migrations
+/apps/excurse/migrations
 /apps/landing/migrations
 apps/ticket/migrations/
 core/migrations/

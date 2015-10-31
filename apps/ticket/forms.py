@@ -8,5 +8,5 @@ __author__ = 'Rylcev Alexy'
 class TicketForm(ModelForm):
     class Meta:
         model = Ticket
-        fields = ('name', 'email', 'comment')
+        fields = ('name', 'email', 'comment', 'excurse', 'group')
 

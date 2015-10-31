@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block header_class %}
+  header-travel
+{% endblock %}
 {% block head %}
   <div class="container">
     <div class="row">
@@ -6,9 +9,7 @@
         <div class="page__title">
           <h1 class="page__title_white">Журнал путешествий</h1>
         </div>
-        <div class="page__text page__text_white">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor itaque non quis ut. Accusantium est et fuga impedit modi nam odit temporibus voluptatibus. Alias animi facere neque voluptatem voluptatum.</p>
-        </div>
+
       </div>
     </div>
   </div>
@@ -18,20 +19,25 @@
     <div class="container">
       <div class="row">
         <div class="travels">
-          {% for item in '123456789' %}
+          <div class="col-lg-12">
+            <div class="page__text page__text_white">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor itaque non quis ut. Accusantium est et fuga impedit modi nam odit temporibus voluptatibus. Alias animi facere neque voluptatem voluptatum.</p>
+            </div>
+          </div>
+          {% for object in object_list %}
           <div class="col-lg-4 col-xs-12">
             <div class="travels-item">
               <div class="travels-item-cover">
-                <img src="{{ STATIC_URL }}img/travel-item__cover.jpg" class="travels-item-cover__img" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
+                <img src="{{ object.cover_resize.url }}" class="travels-item-cover__img" alt="{{ object.title|default:'' }}">
               </div>
               <div class="travels-item-extra">
-                <span class="travels-item-extra__date">19.10.2015</span>
-                <span class="glyphicon glyphicon-eye-open"></span><span class="travels-item-extra__visit">392</span>
-                <span class="glyphicon glyphicon-comment"></span><span class="travels-item-extra__comment">10</span>
-                <a href="#" class="travels-item__link">
-                  <h2 class="travels-item__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                <span class="travels-item-extra__date">{{ object.created }}</span>
+                <span class="glyphicon glyphicon-eye-open"></span><span class="travels-item-extra__visit">{{ object.visit|default:'0' }}</span>
+                <span class="glyphicon glyphicon-comment"></span><span class="travels-item-extra__comment">{{ object.comment|default:'0' }}</span>
+                <a href="{{ object.get_absolute_url }}" class="travels-item__link">
+                  <h2 class="travels-item__title">{{ object.title|default:'' }}</h2>
                   <p class="travels-item__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae distinctio ea enim harum illum, in ipsam itaque laborum molestias nostrum nulla, odit, officia quis repellendus reprehenderit saepe similique unde vel?
+                    {{ object.text|striptags|truncatechars:100 }}
                   </p>
                 </a>
               </div>
@@ -40,25 +46,7 @@
           {% endfor %}
           <div class="clearfix"></div>
         </div>
-        <div class="text-center">
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        {% include '__includes/pagination.html' %}
       </div>
     </div>
     <div class="authors">

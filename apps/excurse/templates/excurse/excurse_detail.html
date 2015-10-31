@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page__title">
+            <h1>{{ object.title|default:'' }}</h1>
+          </div>
+          {% if object.price or object.time or object.start %}
+          <div class="page-desc">
+            <div class="col-lg-8 col-lg-offset-2">
+              <table class="table">
+                <tr>
+                  <th>Длительность:</th>
+                  <th>Отправка</th>
+                  <th>Стоимость</th>
+                </tr>
+                <tr>
+                  <td>{{ object.time|default:' '}}ч.</td>
+                  <td>{{ object.start|default:' '}}</td>
+                  <td>{{ object.price|default:' '}}$</td>
+                </tr>
+              </table>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          {% endif %}
+          <div class="page-cover">
+            <img src="{{ object.cover.url }}" alt="{{ object.name|default:'' }}" class="page-cover__img">
+          </div>
+          <div class="page__content">
+            {{ object.text|safe }}
+          </div>
+          <div class="page__button">
+            <a href="#js-modal-ticket" class="btn btn-success btn-lg js-ticket-button" data-excurse="{{ object.id }}">Заказать экскурсию</a>
+          </div>
+
+        </div>
+      </div>
+      {% if object.excursephoto_set.all %}
+      <div class="row">
+        <div class="page-gallery">
+        {% for photo in object.excursephoto_set.all %}
+          <div class="col-lg-4">
+            <div class="page-gallery-item">
+              <a href="{{ photo.image.url }}" rel="photo-group" class="page-gallery__link js-page-gallery" title="{{ photo.name }}">
+                <img src="{{ photo.image_resize.url }}" class="page-gallery__photo" alt="{{ photo.name }}">
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

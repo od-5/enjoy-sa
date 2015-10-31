@@ -14,6 +14,7 @@ $(function() {
   });
   $('a.documents-gallery').fancybox();
   $('a.photo-gallery').fancybox();
+  $('a.js-page-gallery').fancybox();
   $('.review-slider').flexslider({
         animation: "slide",
         selector: ".review-slides > li",
@@ -29,10 +30,17 @@ $(function() {
   $('.js-ticket-button').on('click', function(e){
     var form = $(this).parent('form');
 
+    if ($(this).data('excurse')){
+      var excurse = $(this).data('excurse');
+      //alert(group);
+      //$('.ticket-modal-form__group').remove();
+      $('.ticket-modal-form__excurse').val(excurse);
+    }
     if ($(this).data('group')){
       var group = $(this).data('group');
       //alert(group);
-      $('.pop-form__group').val(group);
+      //$('.ticket-modal-form__excurse').remove();
+      $('.ticket-modal-form__group').val(group);
     }
 
     if (form.length != 0) {

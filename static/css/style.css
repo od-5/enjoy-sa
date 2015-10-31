@@ -6136,6 +6136,7 @@ h2 {
   height: auto !important;
   height: 100%;
   margin-bottom: -100px;
+  background-color: #fff;
 }
 @media (max-width: 768px) {
   .wrapper {
@@ -6212,10 +6213,13 @@ textarea.error {
   padding: 10px;
 }
 .header {
-  background-image: url(../img/header-page__bg.jpg);
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+  background-image: url(../img/menu/menu__bg.jpg);
+}
+.header-travel {
+  background-image: url(../img/header-page__bg.jpg);
 }
 .header-home {
   background-image: url(../img/header__bg.jpg);
@@ -6602,6 +6606,7 @@ textarea.error {
   text-shadow: 1px 1px 1px #333;
   color: #fff;
   background-image: url("../img/title__line.png") !important;
+  margin-bottom: 150px;
 }
 .page__text {
   font-size: 16px;
@@ -6612,6 +6617,41 @@ textarea.error {
 .page__text_white {
   text-shadow: 1px 1px 1px #333;
   color: #ffffff;
+}
+.page-cover {
+  text-align: center;
+  margin: 20px 0;
+}
+.page-cover__img {
+  max-width: 100%;
+}
+.page__content {
+  padding-bottom: 50px;
+}
+.page-desc {
+  font-size: 14px;
+}
+.page-gallery__link {
+  display: block;
+  width: 100%;
+}
+.page-gallery__photo {
+  width: 100%;
+}
+.page-gallery-item {
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px #333;
+  -moz-box-shadow: 0 0 10px #333;
+  box-shadow: 0 0 10px #333;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.page__button {
+  margin: 40px 0;
+  text-align: center;
 }
 .travels {
   padding-top: 30px;
@@ -6697,6 +6737,12 @@ textarea.error {
     width: 100%;
     float: none;
   }
+}
+.groups-item-content__link:hover {
+  text-decoration: none;
+}
+.groups-item-content__link:hover h2 {
+  color: #666;
 }
 .groups-item-content__title {
   color: #333;
@@ -6875,4 +6921,19 @@ textarea.error {
 .authors-add #js-auth-button {
   color: #009e8e !important;
   text-transform: uppercase;
+}
+.faq {
+  margin-bottom: 30px;
+}
+.faq-question {
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.faq-question-icon {
+  text-align: center;
+}
+.faq-answer__text {
+  padding: 10px 0;
 }

@@ -1,59 +1,55 @@
 {% extends 'base.html' %}
-{% block head %}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-
-      </div>
-    </div>
-  </div>
-{% endblock %}
 {% block content %}
   <div class="content">
     <div class="container">
       <div class="row">
-        <div class="page__title">
-          <h1>Групповые туры</h1>
-        </div>
-        <div class="page__text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor itaque non quis ut. Accusantium est et fuga impedit modi nam odit temporibus voluptatibus. Alias animi facere neque voluptatem voluptatum.</p>
+        <div class="col-lg-12">
+          <div class="page__title">
+            <h1>Групповые туры</h1>
+          </div>
+          <div class="page__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor itaque non quis ut. Accusantium est et fuga impedit modi nam odit temporibus voluptatibus. Alias animi facere neque voluptatem voluptatum.</p>
+          </div>
         </div>
         <div class="groups">
-          {% for item in '123456789' %}
+        {% if object_list %}
+          {% for object in object_list %}
           <div class="col-lg-10  col-lg-offset-1 col-xs-12">
             <div class="groups-item">
               <div class="groups-item-cover">
-                <img src="{{ STATIC_URL }}img/groups-item__cover.jpg" class="groups-item-cover__img" alt="Lorem ipsum dolor sit amet">
+                <img src="{{ object.cover_resize.url }}" class="groups-item-cover__img" alt="{{ object.title|default:'' }}">
               </div>
               <div class="groups-item-content">
-                <h2 class="groups-item-content__title">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </h2>
+                <a href="{{ object.get_absolute_url }}" class="groups-item-content__link">
+                  <h2 class="groups-item-content__title">
+                    {{ object.title|default:'' }}
+                  </h2>
+                </a>
                 <table class="table">
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-plane"></span>
                       <span class="table_text">Прибытие:</span>
-                      <b>19.10.2015</b>
+                      <b>{{ object.travel_start|default:'' }}</b>
                     </td>
                     <td>
                       <span class="table_text">Забронировано мест:</span>
-                      <b>5</b>
+                      <b>{{ object.reserved|default:'' }}</b>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-calendar"></span>
                       <span class="table_text">Отъезд:</span>
-                      <b>30.10.2015</b>
+                      <b>{{ object.travel_end|default:'' }}</b>
                     </td>
                     <td>
-                      <span class="table_text">Доступно мест</span>
-                      <b>2</b>
+                      <span class="table_text">Количество мест:</span>
+                      <b>{{ object.seats|default:'' }}</b>
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="2">Стоимость тура: <b>12000$</b> <a href="#" class="btn btn-warning">Присоединиться к группе!</a></td>
+                    <td colspan="2">Стоимость тура: <b>{{ object.price|default:'' }}</b> <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button" data-group="{{ object.id }}">Присоединиться к группе!</a></td>
                   </tr>
                 </table>
               </div>
@@ -61,27 +57,10 @@
             </div>
           </div>
           {% endfor %}
+        {% endif %}
           <div class="clearfix"></div>
         </div>
-        <div class="text-center">
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        {% include '__includes/pagination.html' %}
       </div>
     </div>
   </div>

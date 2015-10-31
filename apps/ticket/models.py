@@ -1,6 +1,7 @@
 # coding=utf-8
 from django.db import models
-
+from apps.excurse.models import Excurse
+from apps.group.models import Group
 from core.base_model import Common
 
 __author__ = 'alexy'
@@ -32,6 +33,8 @@ class Ticket(Common):
         (3, u'Выполнено'),
     )
 
+    excurse = models.ForeignKey(to=Excurse, verbose_name=u'Экскурсия', blank=True, null=True)
+    group = models.ForeignKey(to=Group, verbose_name=u'Групповой тур', blank=True, null=True)
     name = models.CharField(verbose_name=u'Имя', max_length=256)
     email = models.EmailField(verbose_name=u'e-mail', max_length=256)
     comment = models.TextField(verbose_name=u'Сообщение клиента', blank=True, null=True)
