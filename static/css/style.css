@@ -6699,6 +6699,7 @@ textarea.error {
 .travels-item__title {
   font-size: 20px;
   color: #333;
+  height: 70px;
 }
 .travels-item__text {
   font-size: 16px;
