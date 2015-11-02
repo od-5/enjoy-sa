@@ -6475,6 +6475,7 @@ textarea.error {
   .why2-item__text {
     display: block;
     width: 100%;
+    font-size: 12px;
   }
 }
 .review {
@@ -6536,6 +6537,11 @@ textarea.error {
 .review-content__text {
   line-height: 24px;
   padding-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .review-content__text {
+    font-size: 12px;
+  }
 }
 .review-content__name {
   padding-top: 50px;
