@@ -2005,7 +2005,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  color: #3e2d84;
   text-decoration: none;
 }
 .btn:active,
@@ -2026,18 +2026,18 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #333333;
+  color: #3e2d84;
   background-color: #ffffff;
-  border-color: #cccccc;
+  border-color: #3e2d84;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
+  color: #3e2d84;
   background-color: #ebebeb;
-  border-color: #adadad;
+  border-color: #291d56;
 }
 .btn-default:active,
 .btn-default.active,
@@ -2060,11 +2060,11 @@ fieldset[disabled] .btn-default:active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
   background-color: #ffffff;
-  border-color: #cccccc;
+  border-color: #3e2d84;
 }
 .btn-default .badge {
   color: #ffffff;
-  background-color: #333333;
+  background-color: #3e2d84;
 }
 .btn-primary {
   color: #ffffff;
@@ -6176,6 +6176,11 @@ h2 {
   text-align: center;
   padding: 0;
 }
+@media (max-width: 768px) {
+  .flex-direction-nav {
+    display: none;
+  }
+}
 .flex-direction-nav li {
   display: inline-block;
   padding: 20px 20px;
@@ -6224,6 +6229,11 @@ textarea.error {
 .header-home {
   background-image: url(../img/header__bg.jpg);
 }
+@media (max-width: 768px) {
+  .header-home {
+    background-image: url(../img/header__bg_sm.jpg);
+  }
+}
 .header-logotype {
   height: 100%;
   vertical-align: top;
@@ -6250,7 +6260,7 @@ textarea.error {
 }
 @media (max-width: 768px) {
   .header-h1 {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 .header-h1_big {
@@ -6260,7 +6270,7 @@ textarea.error {
 }
 @media (max-width: 768px) {
   .header-h1_big {
-    font-size: 36px;
+    font-size: 28px;
   }
 }
 .navbar {
@@ -6315,6 +6325,13 @@ textarea.error {
   padding-bottom: 40px;
   margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+  .landing__title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 0;
+  }
+}
 .landing__title_dark {
   background-image: url("../img/title__line_dark.png");
   background-repeat: no-repeat;
@@ -6335,6 +6352,11 @@ textarea.error {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+}
+@media (max-width: 768px) {
+  .landing-section {
+    background-image: url("../img/landing-section__bg_sm.jpg");
+  }
 }
 .why {
   color: #3e2d84;
@@ -6359,6 +6381,21 @@ textarea.error {
 .why-ul-li__title {
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .why-ul-li__text {
+    display: none;
+  }
+}
+.why-ul-li .js-why-button__show,
+.why-ul-li .js-why-button__hide {
+  display: none;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .why-ul-li .js-why-button__show {
+    display: block;
+  }
+}
 .why-icon {
   text-align: center;
 }
@@ -6367,6 +6404,11 @@ textarea.error {
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+}
+@media (max-width: 768px) {
+  .info {
+    background-image: url('../img/info__bg_sm.jpg');
+  }
 }
 .info-form {
   text-align: center;
@@ -6385,6 +6427,11 @@ textarea.error {
   -webkit-background-size: cover;
   background-size: cover;
   padding-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .info2 {
+    background-image: url('../img/info2__bg_sm.jpg');
+  }
 }
 .why2-item {
   display: table-row;
@@ -6439,6 +6486,11 @@ textarea.error {
   padding-bottom: 60px;
   color: #fff;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .review {
+    background-image: url('../img/review__bg_sm.jpg');
+  }
 }
 .review-slider {
   padding-top: 25px;
@@ -6512,6 +6564,11 @@ textarea.error {
   background-position: center;
   padding-bottom: 160px;
 }
+@media (max-width: 768px) {
+  .capetown {
+    background-image: url('../img/capetown__bg_sm.jpg');
+  }
+}
 .ticket-modal-form {
   width: 360px;
 }
@@ -6580,6 +6637,7 @@ textarea.error {
 .footer ul {
   list-style: none;
   margin-bottom: 0;
+  padding-left: 0;
 }
 .footer ul li {
   display: inline-block;
@@ -6602,21 +6660,36 @@ textarea.error {
   background-position: bottom center;
   padding-bottom: 30px;
 }
+@media (max-width: 768px) {
+  .page__title h1 {
+    font-size: 20px;
+  }
+}
 .page__title_white {
   text-shadow: 1px 1px 1px #333;
   color: #fff;
   background-image: url("../img/title__line.png") !important;
   margin-bottom: 150px;
 }
+@media (max-width: 768px) {
+  .page__title_white {
+    margin-bottom: 20px;
+  }
+}
 .page__text {
   font-size: 16px;
   color: #666;
   padding-bottom: 30px;
 }
+@media (max-width: 768px) {
+  .page__text {
+    font-size: 12px;
+  }
+}
 .page__text_white {
   text-align: center;
   text-shadow: 1px 1px 1px #333;
-  color: #ffffff;
+  color: #fff;
 }
 .page-cover {
   text-align: center;
@@ -6628,8 +6701,29 @@ textarea.error {
 .page__content {
   padding-bottom: 50px;
 }
+@media (max-width: 768px) {
+  .page__content {
+    font-size: 12px;
+  }
+}
 .page-desc {
   font-size: 14px;
+}
+@media (max-width: 768px) {
+  .page-desc .table {
+    font-size: 10px;
+  }
+  .page-desc .table .th {
+    font-size: 8px;
+  }
+  .page-desc table > thead > tr > th,
+  .page-desc .table > tbody > tr > th,
+  .page-desc .table > tfoot > tr > th,
+  .page-desc .table > thead > tr > td,
+  .page-desc .table > tbody > tr > td,
+  .page-desc .table > tfoot > tr > td {
+    padding: 0;
+  }
 }
 .page-gallery__link {
   display: block;
@@ -6701,9 +6795,20 @@ textarea.error {
   color: #333;
   height: 70px;
 }
+@media (max-width: 768px) {
+  .travels-item__title {
+    font-size: 14px;
+    height: 45px;
+  }
+}
 .travels-item__text {
   font-size: 16px;
   color: #999;
+}
+@media (max-width: 768px) {
+  .travels-item__text {
+    font-size: 12px;
+  }
 }
 .groups-item {
   -webkit-border-radius: 5px;
@@ -6752,9 +6857,21 @@ textarea.error {
   margin-top: 0;
   height: 80px;
 }
+@media (max-width: 768px) {
+  .groups-item-content__title {
+    margin-top: 5px;
+    font-size: 14px;
+    height: auto;
+  }
+}
 .groups .table {
   margin-bottom: 0;
   color: #999;
+}
+@media (max-width: 768px) {
+  .groups .table {
+    font-size: 10px;
+  }
 }
 .groups .table__text {
   display: inline-block;
@@ -6773,8 +6890,11 @@ textarea.error {
 }
 @media (max-width: 768px) {
   .groups .table a {
-    float: right;
     margin-right: 0;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    font-size: 12px;
   }
 }
 .excurse-item {
@@ -6810,6 +6930,11 @@ textarea.error {
   -webkit-background-size: cover;
   background-size: cover;
 }
+@media (max-width: 768px) {
+  .excurse-item-desc {
+    height: auto;
+  }
+}
 .excurse-item-desc__text {
   padding: 10px;
   color: #fff;
@@ -6817,6 +6942,11 @@ textarea.error {
   width: 100%;
   height: 100%;
   background-color: rgba(102, 102, 102, 0.71);
+}
+@media (max-width: 768px) {
+  .excurse-item-desc__text {
+    font-size: 12px;
+  }
 }
 .authors {
   padding-bottom: 70px;
@@ -6831,6 +6961,12 @@ textarea.error {
   font-size: 40px;
   font-weight: bold;
   color: #fff;
+}
+@media (max-width: 768px) {
+  .authors__title {
+    font-size: 20px;
+    padding: 20px 0;
+  }
 }
 .authors-list-item {
   margin-bottom: 30px;
@@ -6880,6 +7016,7 @@ textarea.error {
     display: block;
     width: 100%;
     float: none;
+    font-size: 14px;
   }
   .authors-list-item-content:before {
     display: none;
@@ -6891,6 +7028,12 @@ textarea.error {
   color: #333;
   padding-right: 20px;
 }
+@media (max-width: 768px) {
+  .authors-list-item-content__name,
+  .authors-list-item-content__article {
+    font-size: 14px;
+  }
+}
 .authors-list-item-content__text {
   font-size: 16px;
   color: #666;
@@ -6900,6 +7043,7 @@ textarea.error {
 @media (max-width: 768px) {
   .authors-list-item-content__text {
     margin-bottom: 45px;
+    font-size: 12px;
   }
 }
 .authors-list-item-content__read {
@@ -6919,6 +7063,11 @@ textarea.error {
   color: #fff;
   margin-top: 50px;
 }
+@media (max-width: 768px) {
+  .authors-add {
+    font-size: 14px;
+  }
+}
 .authors-add #js-auth-button {
   color: #009e8e !important;
   text-transform: uppercase;
@@ -6926,11 +7075,21 @@ textarea.error {
 .faq {
   margin-bottom: 30px;
 }
+@media (max-width: 768px) {
+  .faq {
+    font-size: 12px;
+  }
+}
 .faq-question {
   background-color: #f1f1f1;
   padding: 10px 0;
   font-size: 20px;
   font-weight: bold;
+}
+@media (max-width: 768px) {
+  .faq-question {
+    font-size: 14px;
+  }
 }
 .faq-question-icon {
   text-align: center;

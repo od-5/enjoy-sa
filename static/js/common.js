@@ -177,5 +177,17 @@ $(function() {
     }
   });
 
+//  раскрытие текста блока "почему именно мы"
+  $('.js-why-button__show').click(function(){
+    $(this).parent().find('.why-ul-li__text').slideToggle();
+    $(this).parent().find('.js-why-button__hide').toggle();
+    $(this).toggle();
+  });
+  $('.js-why-button__hide').click(function(){
+    $(this).parent().find('.why-ul-li__text').slideToggle();
+    $(this).parent().find('.js-why-button__show').toggle();
+    $(this).toggle();
+  });
+
 
 });

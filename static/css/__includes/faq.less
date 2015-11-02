@@ -1,9 +1,15 @@
 .faq {
+  @media (max-width: @screen-sm) {
+    font-size: 12px;
+  }
   &-question {
     background-color: #f1f1f1;
     padding: 10px 0;
     font-size: 20px;
     font-weight: bold;
+    @media (max-width: @screen-sm) {
+      font-size: 14px;
+    }
     &-icon {
       text-align: center;
     }

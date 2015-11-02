@@ -39,6 +39,9 @@
       background-repeat: no-repeat;
       -webkit-background-size: cover;
       background-size: cover;
+      @media (max-width: @screen-sm) {
+        height: auto;
+      }
       &__text {
         padding: 10px;
         color: #fff;
@@ -46,6 +49,9 @@
         width: 100%;
         height: 100%;
         background-color: rgba(102, 102, 102, 0.71);
+        @media (max-width: @screen-sm) {
+          font-size: 12px;
+        }
       }
     }
   }

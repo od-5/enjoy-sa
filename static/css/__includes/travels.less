@@ -44,10 +44,17 @@
       font-size: 20px;
       color: #333;
       height: 70px;
+      @media (max-width: @screen-sm) {
+        font-size: 14px;
+        height: 45px;
+      }
     }
     &__text {
       font-size: 16px;
       color: #999;
+      @media (max-width: @screen-sm) {
+        font-size: 12px;
+      }
     }
   }
 }

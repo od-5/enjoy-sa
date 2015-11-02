@@ -5,6 +5,11 @@
     padding-top: 60px;
     padding-bottom: 40px;
     margin-bottom: 20px;
+    @media (max-width: @screen-sm) {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px 0;
+    }
     &_dark {
       background-image: url("../img/title__line_dark.png");
       background-repeat: no-repeat;
@@ -26,6 +31,9 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    @media (max-width: @screen-sm) {
+      background-image: url("../img/landing-section__bg_sm.jpg");
+    }
   }
 }
 .why {
@@ -45,7 +53,18 @@
         font-weight: bold;
       }
       &__text {
-
+        @media (max-width: @screen-sm) {
+          display: none;
+        }
+      }
+      .js-why-button__show, .js-why-button__hide {
+        display: none;
+        margin: auto;
+      }
+      .js-why-button__show {
+        @media (max-width: @screen-sm) {
+          display: block;
+        }
       }
     }
   }
@@ -59,6 +78,9 @@
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+  @media (max-width: @screen-sm) {
+    background-image: url('../img/info__bg_sm.jpg');
+  }
   &-form {
     text-align: center;
     margin-top: 40px;
@@ -81,6 +103,9 @@
   -webkit-background-size: cover;
   background-size: cover;
   padding-bottom: 60px;
+  @media (max-width: @screen-sm) {
+    background-image: url('../img/info2__bg_sm.jpg');
+  }
 }
 
 .why2 {
@@ -132,6 +157,9 @@
   padding-bottom: 60px;
   color: #fff;
   text-align: center;
+  @media (max-width: @screen-sm) {
+    background-image: url('../img/review__bg_sm.jpg');
+  }
   &-slider {
     padding-top: 25px;
   }
@@ -206,4 +234,7 @@
   background-size: cover;
   background-position: center;
   padding-bottom: 160px;
+  @media (max-width: @screen-sm) {
+    background-image: url('../img/capetown__bg_sm.jpg');
+  }
 }

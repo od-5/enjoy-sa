@@ -41,12 +41,20 @@
         font-weight: bold;
         margin-top: 0;
         height: 80px;
+        @media (max-width: @screen-sm) {
+          margin-top: 5px;
+          font-size: 14px;
+          height: auto;
+        }
       }
     }
   }
   .table {
     margin-bottom: 0;
     color: #999;
+    @media (max-width: @screen-sm) {
+      font-size: 10px;
+    }
     &__text {
       display: inline-block;
       width: 60%;
@@ -62,8 +70,11 @@
       float: right;
       margin-right: 65px;
       @media (max-width: @screen-sm) {
-        float: right;
         margin-right: 0;
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+        font-size: 12px;
       }
     }
   }

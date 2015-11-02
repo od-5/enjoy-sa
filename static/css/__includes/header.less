@@ -9,6 +9,9 @@
   }
   &-home {
     background-image: url(../img/header__bg.jpg);
+    @media (max-width: @screen-sm) {
+      background-image: url(../img/header__bg_sm.jpg);
+    }
   }
   &-logotype {
     height: 100%;
@@ -32,14 +35,14 @@
     text-align: center;
     margin-bottom: 30px;
     @media (max-width: @screen-sm) {
-      font-size: 30px;
+      font-size: 24px;
     }
     &_big {
       font-size: 50px;
       color: #ff3333;
       text-shadow: 2px 2px 2px #ffff00;
       @media (max-width: @screen-sm) {
-        font-size: 36px;
+        font-size: 28px;
       }
     }
   }

@@ -9,22 +9,31 @@
       background-repeat: no-repeat;
       background-position: bottom center;
       padding-bottom: 30px;
+      @media (max-width: @screen-sm) {
+        font-size: 20px;
+      }
     }
     &_white {
       text-shadow: 1px 1px 1px #333;
       color: #fff;
       background-image: url("../img/title__line.png") !important;
       margin-bottom: 150px;
+      @media (max-width: @screen-sm) {
+        margin-bottom: 20px;
+      }
     }
   }
   &__text {
     font-size: 16px;
     color: #666;
     padding-bottom: 30px;
+    @media (max-width: @screen-sm) {
+      font-size: 12px;
+    }
     &_white {
       text-align: center;
       text-shadow: 1px 1px 1px #333;
-      color: #fff
+      color: #fff;
     }
   }
   &-cover {
@@ -36,9 +45,23 @@
   }
   &__content {
     padding-bottom: 50px;
+    @media (max-width: @screen-sm) {
+      font-size: 12px;
+    }
   }
   &-desc {
     font-size: 14px;
+    @media (max-width: @screen-sm) {
+      .table {
+        font-size: 10px;
+        .th {
+          font-size: 8px;
+        }
+      }
+      table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+        padding: 0;
+      }
+    }
   }
   &-gallery {
     &__link {
