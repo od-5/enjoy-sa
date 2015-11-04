@@ -82,7 +82,7 @@
           <div class="authors-add">
           {% if user.is_authenticated %}
             {% if user.can_write_article %}
-            <a href="#" class="btn btn-success btn-lg">Добавить публикацию</a>
+            <a href="{% url 'travels:add' %}" class="btn btn-success btn-lg">Добавить публикацию</a>
             {% else %}
             <p>Что бы начать писать статьи вам нужно полностью заполнить <a href="{% url 'profile' %}">профиль</a> - укажите свои имя, фамилию, придумайте оригинальную подпись и загрузите аватарку</p>
             {% endif %}

@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     url(r'', include('core.urls')),
     url(r'^accounts/logout/$', logout, name='logout'),
     url(r'^inplaceeditform/', include('inplaceeditform.urls')),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

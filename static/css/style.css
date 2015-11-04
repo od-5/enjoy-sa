@@ -6118,6 +6118,12 @@ h2 {
   -o-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
+.django-ckeditor-widget {
+  display: block !important;
+}
+#cke_id_text {
+  width: 100% !important;
+}
 .remove-bottom {
   margin-bottom: 0;
 }
