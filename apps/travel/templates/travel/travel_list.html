@@ -58,6 +58,7 @@
           </div>
           <div class="authors-list">
           {% for author in author_list %}
+            {% if author.can_write_article %}
             <div class="col-lg-6">
               <div class="authors-list-item">
                 <div class="authors-list-item-avatar">
@@ -74,6 +75,7 @@
                 </div>
               </div>
             </div>
+            {% endif %}
           {% endfor %}
             <div class="clearfix"></div>
           </div>
