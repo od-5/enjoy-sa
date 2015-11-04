@@ -4,6 +4,8 @@
 $(function() {
   $.validator.messages.required = "* поле обязательно для заполнения";
 
+
+  $('#js-user-profile-form input[type="text"], #js-user-profile-form textarea').addClass('form-control');
 //  Модальные окна
   $('#js-auth-button').fancybox();
   $('.js-ticket-button').fancybox({

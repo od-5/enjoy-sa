@@ -5,11 +5,13 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page__title">
-            <h1>Групповые туры</h1>
+            <h1>{{ page.title|default:'Групповые туры' }}</h1>
           </div>
+          {% if page.text %}
           <div class="page__text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor itaque non quis ut. Accusantium est et fuga impedit modi nam odit temporibus voluptatibus. Alias animi facere neque voluptatem voluptatum.</p>
+            {{ page.text|safe|default:'' }}
           </div>
+          {% endif %}
         </div>
         <div class="groups">
         {% if object_list %}

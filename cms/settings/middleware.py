@@ -19,4 +19,5 @@ if settings.DEBUG:
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'django.core.context_processors.request',
     'core.context.site_setup',
+    'apps.seo.context.seo_setup',
 )

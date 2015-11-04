@@ -23,4 +23,5 @@ INSTALLED_APPS = (
     'apps.landing',
     'apps.about',
     'apps.faq',
+    'apps.seo',
 )

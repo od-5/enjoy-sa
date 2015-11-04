@@ -7,9 +7,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="page__title">
-          <h1 class="page__title_white">Журнал путешествий</h1>
+          <h1 class="page__title_white">{{ page.title|default:'Журнал путешествий' }}</h1>
         </div>
-
       </div>
     </div>
   </div>
@@ -19,11 +18,13 @@
     <div class="container">
       <div class="row">
         <div class="travels">
+        {% if page.text %}
           <div class="col-lg-12">
             <div class="page__text page__text_white">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor itaque non quis ut. Accusantium est et fuga impedit modi nam odit temporibus voluptatibus. Alias animi facere neque voluptatem voluptatum.</p>
+              <p>{{ page.text|safe|default:'' }}</p>
             </div>
           </div>
+        {% endif %}
           {% for object in object_list %}
           <div class="col-lg-4 col-xs-12">
             <div class="travels-item">
@@ -56,18 +57,18 @@
             <h3 class="authors__title">Наши авторы</h3>
           </div>
           <div class="authors-list">
-          {% for item in '123' %}
+          {% for author in author_list %}
             <div class="col-lg-6">
               <div class="authors-list-item">
                 <div class="authors-list-item-avatar">
-                  <img src="{{ STATIC_URL }}img/author__avatar.png" alt="Фёдор Конюхов" class="authors-list-item-avatar__img">
+                  <img src="{{ author.avatar.url }}" alt="{{ author.get_full_name }}" class="authors-list-item-avatar__img">
                 </div>
                 <div class="authors-list-item-content">
-                  <span class="authors-list-item-content__name">Фёдор Конюхов</span>
+                  <span class="authors-list-item-content__name">{{ author.get_full_name }}</span>
                   <span class="glyphicon glyphicon-edit"></span>
-                  <span class="authors-list-item-content__article">(10)</span>
+                  <span class="authors-list-item-content__article">({{ author.travel_set.all.count }})</span>
                   <p class="authors-list-item-content__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi consectetur dignissimos distinctio, dolore doloribus ea fugit inventore ipsam iste.
+                    {{ author.desc|truncatechars:140|default:'Автор статей' }}
                   </p>
                   <a href="#" class="authors-list-item-content__read btn btn-warning">Читать ></a>
                 </div>
@@ -78,7 +79,11 @@
           </div>
           <div class="authors-add">
           {% if user.is_authenticated %}
+            {% if user.can_write_article %}
             <a href="#" class="btn btn-success btn-lg">Добавить публикацию</a>
+            {% else %}
+            <p>Что бы начать писать статьи вам нужно полностью заполнить <a href="{% url 'profile' %}">профиль</a> - укажите свои имя, фамилию, придумайте оригинальную подпись и загрузите аватарку</p>
+            {% endif %}
           {% else %}
             <p>Для того, что бы стать автором вам нужно <a href="#js-modal-auth" id="js-auth-button">ВОЙТИ</a> в свою учётную запись, либо
             <a href="#js-modal-auth" id="js-auth-button">ЗАРЕГИСТРИРОВАТЬСЯ</a></p>

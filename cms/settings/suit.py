@@ -34,5 +34,6 @@ SUIT_CONFIG = {
         {'label': u'Журнал путешествий', 'app': 'travel'},
         {'label': u'О нас', 'app': 'about'},
         {'label': u'Вопросы и ответы', 'app': 'faq'},
+        {'label': u'SEO', 'app': 'seo'},
     ),
 }

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
 {#  <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-  <meta name="viewport" content="width=1366, initial-scale=1.0">
-  <title>{% block titke %}{{ SETUP.meta_title|default:'Главная страница сайта' }}{% endblock %}</title>
-  <meta name="description" content="{% block meta_desc %}{{ SETUP.meta_desc|default:'' }}{% endblock %}">
-  <meta name="keywords" content="{% block meta_key %}{{ SETUP.meta_key|default:'' }}{% endblock %}">
+  <meta name="viewport" content="width=1200">
+  <title>{% block title %}{{ page.meta_title|default:'Сафари по ЮАР' }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_desc %}{{ page.meta_desc|default:'' }}{% endblock %}">
+  <meta name="keywords" content="{% block meta_key %}{{ page.meta_key|default:'' }}{% endblock %}">
   <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png">
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -23,8 +23,8 @@
   <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
 
 {% load inplace_edit %}
-{% inplace_static %}
   {% block extra_media %}
+    {% inplace_toolbar %}
   {% endblock %}
   {% if SETUP.top_js %}
     {{ SETUP.top_js }}
@@ -52,7 +52,9 @@
             <ul class="nav navbar-nav navbar-right">
               <li>
               {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}?next=/"><img src="{{ STATIC_URL }}img/menu/icon-logout.png" alt="Выход">Выход</a>
+                <a href="{% url 'profile' %}" class="user-profile__link"><span class="glyphicon glyphicon-user">  {{ user.email }}</span></a>
+                <a href="{% url 'logout' %}?next=/">
+                  Выход <span class="glyphicon glyphicon-log-out"></span></a>
               {% else %}
                 <a href="#js-modal-auth" id="js-auth-button"><img src="{{ STATIC_URL }}img/menu/icon-login.png" alt="Войти">Войти</a>
               {% endif %}
@@ -67,8 +69,11 @@
       <div class="container">
         <div class="col-lg-10 col-lg-offset-1">
           <div class="header-text text-center">
-            <h1 class="header-h1">Хотите совершить сафари-путешествие по Южной Африке и сэкономить до <span
-                class="header-h1_big">30%</span> от стоимости тура?</h1>
+          {% if header_1 %}
+            {% inplace_edit 'header_1.text|safe|default:""' %}
+          {% else %}
+            <h1 class="header-h1">Хотите совершить сафари-путешествие по Южной Африке и сэкономить до <strong>30%</strong> от стоимости тура?</h1>
+          {% endif %}
             <a href="#js-modal-ticket" class="btn btn-success btn-lg js-ticket-button">Задать вопрос</a>
           </div>
         </div>

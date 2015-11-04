@@ -4,6 +4,8 @@ from django.contrib import auth
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.views.generic import UpdateView
+from core.forms import UserProfileForm
 from core.models import Setup, User
 
 __author__ = 'alexy'
@@ -59,3 +61,12 @@ def landing_registration(request):
             return {
                 'success': u'Вы успешно зарегистрировались на сайте!'
             }
+
+
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'core/profile.html'
+    form_class = UserProfileForm
+
+    def get_object(self, queryset=None):
+        return self.request.user

@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}{{ page.meta_title|default:'Сафари по ЮАР' }}{% endblock %}
+{% block meta_desc %}{{ page.meta_desc|default:'мета описание' }}{% endblock %}">
+{% block meta_key %}{{ page.meta_key|default:'Ключевые слова' }}{% endblock %}">
 {% block content %}
 
 {% endblock %}

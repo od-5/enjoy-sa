@@ -3,6 +3,11 @@
   <div class="content">
     <div class="container">
       <div class="row">
+      {% if page.text %}
+        <div class="page__text">
+          {{ page.text|safe|default:'' }}
+        </div>
+      {% endif %}
       {% if object_list %}
         {% for object in object_list %}
         <div class="col-lg-12">

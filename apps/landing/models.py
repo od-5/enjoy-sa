@@ -132,3 +132,28 @@ class Review(models.Model):
     photo_resize = ImageSpecField(
         [SmartResize(*settings.REVIEW_PHOTO_SIZE)], source='photo', format='JPEG', options={'quality': 94}
     )
+
+
+class Header(models.Model):
+    class Meta:
+        verbose_name = u'Заголовок блока'
+        verbose_name_plural = u'Заголовки блоков'
+        app_label = 'landing'
+
+    def __unicode__(self):
+        return self.text
+
+    BLOCK_CHOICE = (
+        (1, u'Текст в HEADER'),
+        (2, u'Почему именно мы'),
+        (3, u'Первая форма с заявкой'),
+        (4, u'Наши документы'),
+        (5, u'Информационный блок'),
+        (6, u'Почему выбирают именно нас'),
+        (7, u'Отзывы о поездках'),
+        (8, u'Фотогаллерея'),
+        (9, u'Нижний блок с формой'),
+    )
+
+    text = models.TextField(verbose_name=u'Текст')
+    block = models.PositiveSmallIntegerField(default=1, choices=BLOCK_CHOICE, unique=True)

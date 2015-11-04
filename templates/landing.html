@@ -11,7 +11,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_2 %}
+          {% inplace_edit 'header_2.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_dark">Почему именно мы</h2>
+        {% endif %}
         </div>
         <div class="col-lg-10 col-lg-offset-1">
           <ul class="why-ul">
@@ -43,7 +47,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_3 %}
+          {% inplace_edit 'header_3.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_white">Совершите самое необычное путешествие в вашей жизни</h2>
+        {% endif %}
 
           <form class="info-form ticket-form">
             <input type="text" name="name" class="ticket-form__name" placeholder="Ваше имя">
@@ -58,7 +66,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_4 %}
+          {% inplace_edit 'header_4.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_dark">Наши документы</h2>
+        {% endif %}
         </div>
       </div>
       <div class="row">
@@ -78,8 +90,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_5 %}
+          {% inplace_edit 'header_5.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_white">93% наших клиентов советуют нас друзьям и обращаются к нам
             повторно!</h2>
+        {% endif %}
         </div>
       </div>
     </div>
@@ -88,7 +104,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_6 %}
+          {% inplace_edit 'header_6.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_dark">Почему выбирают именно нас?</h2>
+        {% endif %}
         </div>
       </div>
       <div class="row">
@@ -97,7 +117,8 @@
           <div class="why2-item">
             <div class="why2-item-number"><span class="why2-item-number__text">{{ forloop.counter }}</span></div>
             <p class="why2-item__text">
-              {{ item.text|safe|default:'' }}
+{#              {{ item.text|safe|default:'' }}#}
+              {% inplace_edit 'item.text|safe|default:""' %}
             </p>
           </div>
         </div>
@@ -109,7 +130,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_7 %}
+          {% inplace_edit 'header_7.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_white">Впечатления от поездок</h2>
+        {% endif %}
         </div>
         <div class="col-lg-12">
           <div class="review-slider">
@@ -123,7 +148,9 @@
                   <p class="review-content__text">
                     {{ review.text|safe|default:'' }}
                   </p>
-                  <span class="review-content__name">{{ review.name|default:'' }}</span>
+                  <span class="review-content__name">
+                    {{ review.name|default:'' }}
+                  </span>
                 </div>
                 <div class="clearfix"></div>
               </li>
@@ -138,7 +165,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_8 %}
+          {% inplace_edit 'header_8.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_dark">Фотогаллерея</h2>
+        {% endif %}
         </div>
       </div>
       <div class="row">
@@ -158,8 +189,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if header_9 %}
+          {% inplace_edit 'header_9.text|safe|default:""' %}
+        {% else %}
           <h2 class="landing__title landing__title_white">Кейптаун входит в 5 самых красивых городов мира, обгоняя Париж,
             а ЮАР в 10 самых посещаемых стран мира.</h2>
+        {% endif %}
         </div>
         <div class="col-lg-4 col-lg-offset-4">
           <form action="{% url 'ticket:send' %}" method="post" class="vertical-form js-ticket-form">{% csrf_token %}
