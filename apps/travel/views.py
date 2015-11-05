@@ -1,9 +1,11 @@
 # coding=utf-8
+from annoying.decorators import ajax_request
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404
-from django.views.generic import CreateView, UpdateView, ListView
+from django.views.generic import CreateView, UpdateView, ListView, DetailView
 from core.models import User
 from .models import Travel
-from .forms import TravelCreateForm
+from .forms import TravelCreateForm, TravelCommentForm
 
 __author__ = 'alexy'
 
@@ -37,3 +39,40 @@ class TravelListView(ListView):
             'author_list': User.objects.filter(first_name__isnull=False, last_name__isnull=False).exclude(avatar='')
         })
         return context
+
+
+class TravelDetailView(DetailView):
+    model = Travel
+
+    def get_context_data(self, **kwargs):
+        context = super(TravelDetailView, self).get_context_data(**kwargs)
+        if self.request.user.is_authenticated():
+            comment_form = TravelCommentForm(
+                initial={
+                    'travel': self.object,
+                    'user': self.request.user
+                }
+            )
+            context.update({
+                'comment_form': comment_form
+            })
+        return context
+
+@ajax_request
+def comment(request):
+    if request.method == 'POST':
+        form = TravelCommentForm(request.POST)
+        print form
+        if form.is_valid():
+            new_comment = form.save()
+            new_comment.save()
+            return {
+                'success': u'Ваш комментарий сохранён'
+            }
+        else:
+            return {
+                'success': u'Текст комментария не может быть пустым'
+            }
+    else:
+        return HttpResponseRedirect('/travels/')
+

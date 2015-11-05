@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.contrib import admin
-from .models import ExcurseSection, Excurse, ExcursePhoto
+from .models import ExcurseSection, Excurse, ExcursePhoto, ExcurseComment
 
 
 class ExcurseSectionAdmin(admin.ModelAdmin):
@@ -17,5 +17,9 @@ class ExcurceAdmin(admin.ModelAdmin):
     list_display = ['title', 'price', 'time', 'start', 'pic']
 
 
+class ExcurseCommentAdmin(admin.ModelAdmin):
+    list_display = ('excurse', 'user', 'created')
+
 admin.site.register(ExcurseSection, ExcurseSectionAdmin)
 admin.site.register(Excurse, ExcurceAdmin)
+admin.site.register(ExcurseComment, ExcurseCommentAdmin)

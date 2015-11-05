@@ -2,13 +2,15 @@
 import os
 from random import randint
 import uuid
+from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-
+from imagekit.models import ImageSpecField
+from pilkit.processors import SmartResize
 
 __author__ = 'alexy'
 
@@ -81,9 +83,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     # delivery_address = models.CharField(verbose_name=u'адрес доставки', max_length=512, blank=True, default=u'')
 
     avatar = models.ImageField(verbose_name=u'Аватар', upload_to=get_photo_image_path, null=True, blank=True)
-    # avatar_small = ImageSpecField([SmartResize(*settings.AVATAR_SMALL)], source='avatar',
-    #                               format='JPEG', options={'quality': 94})
-
+    avatar_resize = ImageSpecField(
+        [SmartResize(*settings.USER_AVATAR_SIZE)], source='avatar', format='JPEG', options={'quality': 94}
+    )
     objects = MyUserManager()
 
     USERNAME_FIELD = 'email'

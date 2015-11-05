@@ -32,4 +32,4 @@ class Comment(Common):
         abstract = True
 
     user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
-    text = RichTextField(verbose_name=u'Текст')
+    text = models.TextField(verbose_name=u'Текст комментария')

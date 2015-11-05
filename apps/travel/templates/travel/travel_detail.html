@@ -1,4 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
+{% block top_js %}
+{% endblock %}
 {% block content %}
   <div class="content">
     <div class="container">
@@ -15,6 +17,7 @@
           </div>
         </div>
       </div>
+      {% include 'travel/travel_comment.html' %}
     </div>
   </div>
 {% endblock %}

@@ -8,7 +8,7 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from pilkit.processors import SmartResize
 from pytils.translit import slugify
-from core.base_model import Common, CommonPage
+from core.base_model import Common, CommonPage, Comment
 
 __author__ = 'alexy'
 
@@ -52,3 +52,12 @@ class Group(CommonPage):
     travel_start = models.DateField(verbose_name=u'Прибытие', blank=True, null=True)
     travel_end = models.DateField(verbose_name=u'Отъезд', blank=True, null=True)
     slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
+
+
+class GroupComment(Comment):
+    class Meta:
+        verbose_name = u'Комментарий'
+        verbose_name_plural = u'Комментарии'
+        app_label = 'group'
+
+    group = models.ForeignKey(to=Group, verbose_name=u'Групповой тур')

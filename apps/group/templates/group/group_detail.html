@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% block content %}
   <div class="content">
     <div class="container">
@@ -40,22 +40,7 @@
 
         </div>
       </div>
-{#      {% if object.excursephoto_set.all %}#}
-{#      <div class="row">#}
-{#        <div class="page-gallery">#}
-{#        {% for photo in object.excursephoto_set.all %}#}
-{#          <div class="col-lg-4">#}
-{#            <div class="page-gallery-item">#}
-{#              <a href="{{ photo.image.url }}" rel="photo-group" class="page-gallery__link js-page-gallery" title="{{ photo.name }}">#}
-{#                <img src="{{ photo.image_resize.url }}" class="page-gallery__photo" alt="{{ photo.name }}">#}
-{#              </a>#}
-{#            </div>#}
-{#          </div>#}
-{#          {% endfor %}#}
-{#          <div class="clearfix"></div>#}
-{#        </div>#}
-{#      </div>#}
-{#      {% endif %}#}
+      {% include 'group/group_comment.html' %}
     </div>
   </div>
 {% endblock %}

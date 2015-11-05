@@ -1,0 +1,38 @@
+<div class="row bg-info">
+  <div class="comment">
+    <div class="col-lg-12">
+      <p class="lead">Комментарии:</p>
+      <hr>
+    {% if object.groupcomment_set.all %}
+      {% for comment in object.groupcomment_set.all %}
+        <div class="comment-item">
+          <div class="comment-item-avatar">
+            <img src="{{ comment.user.avatar_resize.url }}" alt="{{ comment.user.get_full_name }}">
+          </div>
+          <div class="comment-item-content">
+            <div class="comment-item-content-name">
+              <span>{{ comment.user.get_full_name }} </span>
+              <span class="glyphicon glyphicon-calendar"></span>
+              <span class="small">{{ comment.created }}</span>
+            </div>
+            <div class="comment-item-content-text">
+              {{ comment.text|safe|default:'' }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+    {% if comment_form %}
+      <form action="{% url 'groups:comment' %}" method="post" class="comment-form js-comment-form" role="form">{% csrf_token %}
+      {{ comment_form.as_p }}
+      <button type="submit" class="btn btn-success">Отправить</button>
+    </form>
+    {% else %}
+    <p class="comment__text">
+    Только <a href="#js-modal-auth" id="js-auth-button">зарегистрированные</a> пользователи могут оставлять комментарии
+    </p>
+    {% endif %}
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

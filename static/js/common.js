@@ -185,6 +185,21 @@ $(function() {
     }
   });
 
+  // отправка формы комментария
+  $( ".js-comment-form" ).validate({
+    submitHandler: function(e) {
+      $('.js-comment-form').ajaxSubmit({
+          success: function(data){
+            console.log(data.success);
+            $.notify(data.success, 'success');
+            $('.js-comment-form').trigger('reset');
+            location.reload(true);
+          }
+      });
+    }
+  });
+
+
 //  раскрытие текста блока "почему именно мы"
   $('.js-why-button__show').click(function(){
     $(this).parent().find('.why-ul-li__text').slideToggle();

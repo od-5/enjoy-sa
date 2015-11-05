@@ -8,7 +8,7 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from pilkit.processors import SmartResize
 from pytils.translit import slugify
-from core.base_model import Common, CommonPage
+from core.base_model import Common, CommonPage, Comment
 from core.models import User
 
 __author__ = 'alexy'
@@ -49,3 +49,12 @@ class Travel(Common):
         [SmartResize(*settings.TRAVEL_COVER_SIZE)], source='cover', format='JPEG', options={'quality': 94}
     )
     slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
+
+
+class TravelComment(Comment):
+    class Meta:
+        verbose_name = u'Комментарий'
+        verbose_name_plural = u'Комментарии'
+        app_label = 'travel'
+
+    travel = models.ForeignKey(to=Travel, verbose_name=u'Статья')

@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 from imagekit.models import ImageSpecField
 from pilkit.processors import SmartResize
 from pytils.translit import slugify
-from core.base_model import CommonPage
+from core.base_model import CommonPage, Comment
 
 __author__ = 'alexy'
 
@@ -86,3 +86,12 @@ class ExcursePhoto(models.Model):
     image_resize = ImageSpecField(
         [SmartResize(*settings.EXCURSE_COVER_SIZE)], source='image', format='JPEG', options={'quality': 94}
     )
+
+
+class ExcurseComment(Comment):
+    class Meta:
+        verbose_name = u'Комментарий'
+        verbose_name_plural = u'Комментарии'
+        app_label = 'excurse'
+
+    excurse = models.ForeignKey(to=Excurse, verbose_name=u'Экскурсия')
