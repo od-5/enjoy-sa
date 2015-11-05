@@ -6226,6 +6226,7 @@ textarea.error {
 }
 .header-travel {
   background-image: url(../img/header-page__bg.jpg);
+  min-height: 390px;
 }
 .header-home {
   background-image: url(../img/header__bg.jpg);
