@@ -6317,7 +6317,8 @@ textarea.error {
     display: none;
   }
 }
-.nav li:hover img {
+.nav li:hover img,
+.nav li .active img {
   opacity: 1;
 }
 #js-auth-button {
