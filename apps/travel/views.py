@@ -20,7 +20,16 @@ class TravelCreateView(CreateView):
 
 
 class TravelListView(ListView):
-    # extra_context = {}
+    model = Travel
+
+    def get_queryset(self):
+        qs = Travel.objects.all()
+        if self.request.GET.get('author'):
+            author_pk = int(self.request.GET.get('author'))
+            queryset = qs.filter(user__pk=author_pk)
+        else:
+            queryset = qs
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super(TravelListView, self).get_context_data(**kwargs)

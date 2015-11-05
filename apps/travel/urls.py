@@ -8,7 +8,7 @@ __author__ = 'alexy'
 
 urlpatterns = patterns(
     '',
-    url(r'^$', TravelListView.as_view(model=Travel), name='list'),
+    url(r'^$', TravelListView.as_view(), name='list'),
     url(r'^add/$', TravelCreateView.as_view(), name='add'),
     url(r'^(?P<slug>[\w-]+)$', DetailView.as_view(model=Travel), name='detail'),
 )

@@ -6964,6 +6964,16 @@ textarea.error {
     font-size: 12px;
   }
 }
+.excurse-section-list {
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+.excurse-section-list-item {
+  display: inline-block;
+  margin: 10px 10px 40px;
+}
 .authors {
   padding-bottom: 70px;
   background-image: url("../img/authors__bg.jpg");
