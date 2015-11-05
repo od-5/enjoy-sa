@@ -4,9 +4,7 @@
 $(function() {
 
   var current_url = '/'+location.href.split('/')[3]+'/';
-  console.log(current_url);
   $('header ul li a').each(function () {
-    console.log($(this).attr('href'));
     if($(this).attr('href') == current_url) $(this).addClass('active');
   });
 
