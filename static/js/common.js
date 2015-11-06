@@ -30,8 +30,8 @@ $(function() {
         controlNav: false,
         //itemWidth: 800,
         itemMargin: 1,
-        prevText: '<<',
-        nextText: '>>'
+        prevText: '<span class="glyphicon glyphicon-circle-arrow-left"></span>',
+        nextText: '<span class="glyphicon glyphicon-circle-arrow-right"></span>'
     });
 
   // заполненяем поля модальной формы
