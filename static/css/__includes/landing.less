@@ -156,17 +156,22 @@
   background-size: cover;
   background-position: center;
   padding-bottom: 60px;
-  color: #fff;
+  color: #333;
   text-align: center;
   @media (max-width: @screen-sm) {
     background-image: url('../img/review__bg_sm.jpg');
   }
   &-slider {
     padding-top: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
   }
   &-slides {
     list-style: none;
     padding: 0;
+    &-item {
+      //padding: 40px;
+      //margin: 0 10px;
+    }
   }
   &-photo {
     margin-bottom: 80px;
@@ -185,7 +190,7 @@
       position: absolute;
       width: 40px;
       height: 40px;
-      left: 0;
+      left: 10px;
       top: -30px;
       background-image: url("../img/colun-left.png");
       background-repeat: no-repeat;
@@ -196,7 +201,7 @@
       position: absolute;
       width: 40px;
       height: 40px;
-      right: 0;
+      right: 10px;
       top: 30px;
       background-image: url("../img/colun-right.png");
       background-repeat: no-repeat;

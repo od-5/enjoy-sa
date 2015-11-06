@@ -6491,7 +6491,7 @@ textarea.error {
   background-size: cover;
   background-position: center;
   padding-bottom: 60px;
-  color: #fff;
+  color: #333;
   text-align: center;
 }
 @media (max-width: 768px) {
@@ -6501,6 +6501,7 @@ textarea.error {
 }
 .review-slider {
   padding-top: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .review-slides {
   list-style: none;
@@ -6524,7 +6525,7 @@ textarea.error {
   position: absolute;
   width: 40px;
   height: 40px;
-  left: 0;
+  left: 10px;
   top: -30px;
   background-image: url("../img/colun-left.png");
   background-repeat: no-repeat;
@@ -6535,7 +6536,7 @@ textarea.error {
   position: absolute;
   width: 40px;
   height: 40px;
-  right: 0;
+  right: 10px;
   top: 30px;
   background-image: url("../img/colun-right.png");
   background-repeat: no-repeat;

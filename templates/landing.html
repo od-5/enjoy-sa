@@ -140,7 +140,7 @@
           <div class="review-slider">
             <ul class="review-slides">
             {% for review in review_list %}
-              <li>
+              <li class="review-slides-item">
                 <div class="review-photo">
                   <img src="{{ review.photo_resize.url }}" alt="{{ review.name|default:'' }}" class="review-photo__img"/>
                 </div>
