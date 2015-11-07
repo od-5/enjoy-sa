@@ -41,6 +41,8 @@ class Ticket(Common):
     sale = models.BooleanField(verbose_name=u'Продажа', default=False)
     ticket_status = models.PositiveSmallIntegerField(verbose_name=u'Статус заявки',  choices=TICKET_STATUS_CHOICE, default=1, blank=True, null=True)
     ticket_comment = models.TextField(verbose_name=u'Комментарий', blank=True, null=True)
+    travel_start = models.DateField(verbose_name=u'Начало тура', blank=True, null=True)
+    travel_end = models.DateField(verbose_name=u'Конец тура', blank=True, null=True)
     sale_status = models.PositiveSmallIntegerField(verbose_name=u'Статус продажи', choices=SALE_STATUS_CHOICE, default=1, blank=True, null=True)
     sale_comment = models.TextField(verbose_name=u'Комментарий', blank=True, null=True)
     price = models.PositiveIntegerField(verbose_name=u'Сумма', default=0, blank=True, null=True)
