@@ -122,9 +122,9 @@ class SaleAdmin(admin.ModelAdmin):
             return {'class': css_class, 'data': obj.name}
 
     list_display = ('name', 'email', 'price', 'sale_status', 'sale_comment')
-    list_filter = ['sale_status', ]
+    list_filter = ['sale_status', 'travel_start', 'travel_end']
     search_fields = ['email', ]
-    fields = ('name', 'email', 'comment', 'sale', 'sale_status', 'sale_comment', 'travel_start', 'travel_end', 'price')
+    fields = ('name', 'email', 'comment', 'sale', 'group', 'excurse', 'sale_status', 'sale_comment', 'travel_start', 'travel_end', 'price')
     form = SaleAdminForm
 
 admin.site.register(Ticket, TicketAdmin)

@@ -64,7 +64,7 @@ class WorkoutCalendar(HTMLCalendar):
                 #     body.append(workout.name)
                 #     body.append('</a></li>')
                 # body.append('</ul>')
-                return self.day_cell(cssclass, '<a href="/ticket/sale/?travel_start__day=%d&travel_start__month=%d&travel_start__year=%d">%d</a>' % (day, self.month, self.year, day))
+                return self.day_cell(cssclass, '<a href="/admin/ticket/sale/?travel_start__day=%d&travel_start__month=%d&travel_start__year=%d">%d</a>' % (day, self.month, self.year, day))
             return self.day_cell(cssclass, day)
         return self.day_cell('noday', '&nbsp;')
 
