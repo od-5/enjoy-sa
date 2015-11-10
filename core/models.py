@@ -122,10 +122,7 @@ class Setup(models.Model):
         app_label = 'core'
 
     def __unicode__(self):
-        if self.meta_title:
-            return self.meta_title
-        else:
-            return u'Настройки'
+        return u'Настройки'
 
     email = models.EmailField(verbose_name=u'e-mail для приёма заявок', blank=True)
     # video = models.TextField(verbose_name=u'HTML-код видео', blank=True, null=True)
