@@ -6188,7 +6188,7 @@ h2 {
 }
 .flex-direction-nav li a {
   color: #666;
-  font-size: 24px;
+  font-size: 26px;
 }
 .flex-direction-nav li a:hover {
   text-decoration: none;
@@ -6247,8 +6247,7 @@ textarea.error {
   text-shadow: 1px 1px 1px #333;
 }
 .header-text {
-  padding-top: 180px;
-  padding-bottom: 200px;
+  padding-bottom: 300px;
 }
 @media (max-width: 768px) {
   .header-text {
@@ -6432,12 +6431,15 @@ textarea.error {
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-  padding-bottom: 60px;
+  padding-bottom: 35px;
 }
 @media (max-width: 768px) {
   .info2 {
     background-image: url('../img/info2__bg_sm.jpg');
   }
+}
+.info2 h2 {
+  color: #ffa500;
 }
 .why2-item {
   display: table-row;
@@ -6840,7 +6842,7 @@ textarea.error {
   margin-bottom: 30px;
 }
 .groups-item-cover {
-  width: 30%;
+  width: 24%;
   float: left;
 }
 @media (max-width: 768px) {
@@ -6853,7 +6855,7 @@ textarea.error {
   width: 100%;
 }
 .groups-item-content {
-  width: 68%;
+  width: 74%;
   float: right;
 }
 @media (max-width: 768px) {
@@ -6870,10 +6872,10 @@ textarea.error {
 }
 .groups-item-content__title {
   color: #333;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   margin-top: 0;
-  height: 80px;
+  height: 40px;
 }
 @media (max-width: 768px) {
   .groups-item-content__title {
@@ -6885,6 +6887,7 @@ textarea.error {
 .groups .table {
   margin-bottom: 0;
   color: #999;
+  font-size: 14px;
 }
 @media (max-width: 768px) {
   .groups .table {
