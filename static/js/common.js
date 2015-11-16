@@ -213,4 +213,27 @@ $(function() {
   });
 
 
+  $( "#slider-range" ).slider({
+  /*
+  Нужно придумать как выдёргивать максимальное и минимальное значение из групповых туров
+  и использовать их в качестве min и max значений
+   */
+
+    range: true,
+    min: $('.js-amount-button').data('min-price'),
+    max: $('.js-amount-button').data('max-price'),
+    values: [ $('.js-amount-button').data('min-price'), $('.js-amount-button').data('max-price') ],
+    slide: function( event, ui ) {
+      $("#amount").val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    },
+    stop: function(event, ui) {
+      $('.js-amount-button').attr('data-first', ui.values[0]);
+      $('.js-amount-button').attr('data-second', ui.values[1]);
+      var button_url = '?min=' + ui.values[0] + '&max=' + ui.values[1]
+      $('.js-amount-button').attr('href', button_url);
+    }
+  });
+  $("#amount").val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+
 });

@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.contrib import admin
-from .models import Group,  GroupComment
+from .models import Group,  GroupComment, GroupSection
 
 __author__ = 'alexy'
 
@@ -13,4 +13,5 @@ class GroupCommentAdmin(admin.ModelAdmin):
     list_display = ('group', 'user', 'created')
 
 admin.site.register(Group, GroupAdmin)
+admin.site.register(GroupSection)
 admin.site.register(GroupComment, GroupCommentAdmin)

@@ -18,6 +18,18 @@ def get_image_path(self, filename):
     return os.path.join('group', filename)
 
 
+class GroupSection(models.Model):
+    class Meta:
+        verbose_name = u'Направление'
+        verbose_name_plural = u'Направления'
+        app_label = 'group'
+
+    def __unicode__(self):
+        return self.name
+
+    name = models.CharField(verbose_name=u'Название', max_length=250)
+
+
 class Group(CommonPage):
     class Meta:
         verbose_name = u'Групповой тур'
@@ -30,6 +42,8 @@ class Group(CommonPage):
 
     def save(self):
         self.slug = slugify(self.title)
+        delta = self.travel_end - self.travel_start
+        self.day_count = delta.days
         super(Group, self).save()
 
     def get_absolute_url(self):
@@ -41,6 +55,7 @@ class Group(CommonPage):
     pic.short_description = u"Обложка"
     pic.allow_tags = True
 
+    groupsection = models.ForeignKey(to=GroupSection, verbose_name=u'Направление', blank=True, null=True)
     description = RichTextField(verbose_name=u'Описание', blank=True, null=True)
     reserved = models.PositiveIntegerField(verbose_name=u'Забронировано мест', default=0)
     seats = models.PositiveIntegerField(verbose_name=u'Количество мест', default=0)
@@ -52,6 +67,7 @@ class Group(CommonPage):
     travel_start = models.DateField(verbose_name=u'Прибытие', blank=True, null=True)
     travel_end = models.DateField(verbose_name=u'Отъезд', blank=True, null=True)
     slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
+    day_count = models.PositiveIntegerField(default=0, verbose_name=u'Количество дней')
 
 
 class GroupComment(Comment):

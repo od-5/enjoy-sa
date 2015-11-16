@@ -13,54 +13,73 @@
           </div>
           {% endif %}
         </div>
-        <div class="groups">
-        {% if object_list %}
-          {% for object in object_list %}
-          <div class="col-lg-10  col-lg-offset-1 col-xs-12">
-            <div class="groups-item">
-              <div class="groups-item-cover">
-                <img src="{{ object.cover_resize.url }}" class="groups-item-cover__img" alt="{{ object.title|default:'' }}">
+        <div class="col-lg-2">
+          <p class="bold">Направления:</p>
+          {% if group_section_list %}
+          <ul class="groups-section-list">
+            <li class="groups-section-list-item"><a href="{% url 'groups:list' %}" class="groups-section-list-item__link">Все направления</a></li>
+            {% for section in group_section_list %}
+            <li><a href="?section={{ section.id }}" class="groups-section-list-item__link">{{ section.name|default:'' }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <p>
+            <label for="amount">Диапазон цен:</label>
+            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+          </p>
+          <div id="slider-range"></div>
+          <a class="js-amount-button btn btn-success ammount-button" data-min-price="{{ price__min }}" data-max-price="{{ price__max }}">Найти</a>
+        </div>
+        <div class="col-lg-10">
+          <div class="groups">
+          {% if object_list %}
+            {% for object in object_list %}
+            <div class="col-lg-12">
+              <div class="groups-item">
+                <div class="groups-item-cover">
+                  <img src="{{ object.cover_resize.url }}" class="groups-item-cover__img" alt="{{ object.title|default:'' }}">
+                </div>
+                <div class="groups-item-content">
+                  <a href="{{ object.get_absolute_url }}" class="groups-item-content__link">
+                    <h2 class="groups-item-content__title">
+                      {{ object.title|default:'' }}
+                    </h2>
+                  </a>
+                  <table class="table">
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-plane"></span>
+                        <span class="table_text">Прибытие:</span>
+                        <b>{{ object.travel_start|default:'' }}</b>
+                      </td>
+                      <td>
+                        <span class="table_text">Забронировано мест:</span>
+                        <b>{{ object.reserved|default:'' }}</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <span class="table_text">Отъезд:</span>
+                        <b>{{ object.travel_end|default:'' }}</b>
+                      </td>
+                      <td>
+                        <span class="table_text">Количество мест:</span>
+                        <b>{{ object.seats|default:'' }}</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="text-center">Стоимость тура: <b>{{ object.price|default:'' }}</b> <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button" data-group="{{ object.id }}">Присоединиться к группе!</a></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="clearfix"></div>
               </div>
-              <div class="groups-item-content">
-                <a href="{{ object.get_absolute_url }}" class="groups-item-content__link">
-                  <h2 class="groups-item-content__title">
-                    {{ object.title|default:'' }}
-                  </h2>
-                </a>
-                <table class="table">
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-plane"></span>
-                      <span class="table_text">Прибытие:</span>
-                      <b>{{ object.travel_start|default:'' }}</b>
-                    </td>
-                    <td>
-                      <span class="table_text">Забронировано мест:</span>
-                      <b>{{ object.reserved|default:'' }}</b>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-calendar"></span>
-                      <span class="table_text">Отъезд:</span>
-                      <b>{{ object.travel_end|default:'' }}</b>
-                    </td>
-                    <td>
-                      <span class="table_text">Количество мест:</span>
-                      <b>{{ object.seats|default:'' }}</b>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2" class="text-center">Стоимость тура: <b>{{ object.price|default:'' }}</b> <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button" data-group="{{ object.id }}">Присоединиться к группе!</a></td>
-                  </tr>
-                </table>
-              </div>
-              <div class="clearfix"></div>
             </div>
+            {% endfor %}
+          {% endif %}
+            <div class="clearfix"></div>
           </div>
-          {% endfor %}
-        {% endif %}
-          <div class="clearfix"></div>
         </div>
         {% include '__includes/pagination.html' %}
       </div>

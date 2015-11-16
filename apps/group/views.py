@@ -1,11 +1,46 @@
 # coding=utf-8
 from annoying.decorators import ajax_request
+from django.db.models import Max, Min
 from django.http import HttpResponseRedirect
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from .forms import GroupCommentForm
-from .models import Group
+from .models import Group, GroupSection
 
 __author__ = 'alexy'
+
+
+class GroupListView(ListView):
+    model = Group
+
+    def get_queryset(self):
+        qs = Group.objects.all()
+        if self.request.GET.get('section'):
+            es_pk = int(self.request.GET.get('section'))
+            queryset = qs.filter(groupsection__pk=es_pk)
+        elif self.request.GET.get('min') and self.request.GET.get('max'):
+            min_price = int(self.request.GET.get('min'))
+            max_price = int(self.request.GET.get('max'))
+            queryset = qs.filter(price__gte=min_price).filter(price__lte=max_price)
+        else:
+            queryset = qs
+            # print(qs.aggregate(Max('price')))
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super(GroupListView, self).get_context_data(**kwargs)
+        qs = Group.objects.all()
+        context.update(
+            qs.aggregate(Min('price'))
+        )
+        context.update(
+            qs.aggregate(Max('price'))
+        )
+        print qs.aggregate(Max('price'))
+        print qs.aggregate(Min('price'))
+        context.update({
+            'group_section_list': GroupSection.objects.all()
+        })
+        return context
 
 
 class GroupDetailView(DetailView):
