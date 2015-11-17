@@ -6251,6 +6251,9 @@ textarea.error {
     background-image: url(../img/header__bg_sm.jpg);
   }
 }
+.header-home .navbar {
+  background-color: rgba(241, 241, 241, 0.57);
+}
 .header .user-profile__link {
   font-size: 14px;
 }
