@@ -7,6 +7,7 @@ __author__ = 'alexy'
 
 class GroupAdmin(admin.ModelAdmin):
     list_display = ['title', 'reserved', 'seats', 'price', 'travel_start', 'travel_end', 'pic']
+    # filter_horizontal = ['groupsection',]
 
 
 class GroupCommentAdmin(admin.ModelAdmin):

@@ -55,7 +55,7 @@ class Group(CommonPage):
     pic.short_description = u"Обложка"
     pic.allow_tags = True
 
-    groupsection = models.ForeignKey(to=GroupSection, verbose_name=u'Направление', blank=True, null=True)
+    # groupsection = models.ManyToManyField(to=GroupSection, verbose_name=u'Направление', blank=True, null=True)
     description = RichTextField(verbose_name=u'Описание', blank=True, null=True)
     reserved = models.PositiveIntegerField(verbose_name=u'Забронировано мест', default=0)
     seats = models.PositiveIntegerField(verbose_name=u'Количество мест', default=0)

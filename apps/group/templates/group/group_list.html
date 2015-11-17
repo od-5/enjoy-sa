@@ -29,11 +29,13 @@
             <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
           </p>
           <div id="slider-range"></div>
+          {% if day_count__max != 0 and day_count__min != 0 %}
           <p>
             <label for="days">Количество дней:</label>
             <input type="text" id="days" readonly style="border:0; color:#f6931f; font-weight:bold;">
           </p>
           <div id="slider-range-days"></div>
+          {% endif %}
           <a href="{% url 'groups:list' %}" class="js-amount-button btn btn-success ammount-button" data-min-price="{{ price__min }}"
              data-max-price="{{ price__max }}" data-min-days="{{ day_count__min }}"
              data-max-days="{{ day_count__max }}" >Найти</a>

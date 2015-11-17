@@ -212,18 +212,7 @@ $(function() {
     $(this).toggle();
   });
 
-
-  //$('.js-amount-button').attr('data-min-price');
-  //$('.js-amount-button').attr('data-max_price');
-  //var link_url = '?min=' + $('.js-amount-button').attr('data-min-price') + '&max=' + $('.js-amount-button').attr('data-max-price');
-  //$('.js-amount-button').attr('href', link_url);
-
   $( "#slider-range" ).slider({
-  /*
-  Нужно придумать как выдёргивать максимальное и минимальное значение из групповых туров
-  и использовать их в качестве min и max значений
-   */
-
     range: true,
     min: $('.js-amount-button').data('min-price'),
     max: $('.js-amount-button').data('max-price'),
@@ -239,28 +228,23 @@ $(function() {
     }
   });
   $("#amount").val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-
-  $( "#slider-range-days" ).slider({
-  /*
-  Нужно придумать как выдёргивать максимальное и минимальное значение из групповых туров
-  и использовать их в качестве min и max значений
-   */
-
-    range: true,
-    min: $('.js-amount-button').data('min-days'),
-    max: $('.js-amount-button').data('max-days'),
-    values: [ $('.js-amount-button').data('min-days'), $('.js-amount-button').data('max-days') ],
-    slide: function( event, ui ) {
-      $("#days").val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-    },
-    stop: function(event, ui) {
-      //$('.js-amount-button').attr('data-first', ui.values[0]);
-      //$('.js-amount-button').attr('data-second', ui.values[1]);
-      var button_url = '?dmin=' + ui.values[0] + '&dmax=' + ui.values[1]
-      $('.js-amount-button').attr('href', button_url);
-    }
-  });
-  $("#days").val( $( "#slider-range-days" ).slider( "values", 0 )+ " - " + $( "#slider-range-days" ).slider( "values", 1 ) );
-
+  if ($("#slider-range-days")){
+    $( "#slider-range-days" ).slider({
+      range: true,
+      min: $('.js-amount-button').data('min-days'),
+      max: $('.js-amount-button').data('max-days'),
+      values: [ $('.js-amount-button').data('min-days'), $('.js-amount-button').data('max-days') ],
+      slide: function( event, ui ) {
+        $("#days").val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+      },
+      stop: function(event, ui) {
+        //$('.js-amount-button').attr('data-first', ui.values[0]);
+        //$('.js-amount-button').attr('data-second', ui.values[1]);
+        var button_url = '?dmin=' + ui.values[0] + '&dmax=' + ui.values[1]
+        $('.js-amount-button').attr('href', button_url);
+      }
+    });
+    $("#days").val( $( "#slider-range-days" ).slider( "values", 0 )+ " - " + $( "#slider-range-days" ).slider( "values", 1 ) );
+  }
 
 });
