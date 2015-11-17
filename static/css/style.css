@@ -6212,6 +6212,11 @@ textarea.error {
 }
 #slider-range {
   font-size: 8px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#slider-range-days {
+  font-size: 8px;
   margin-bottom: 20px;
 }
 .ammount-button {

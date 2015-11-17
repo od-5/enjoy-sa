@@ -21,6 +21,10 @@ class GroupListView(ListView):
             min_price = int(self.request.GET.get('min'))
             max_price = int(self.request.GET.get('max'))
             queryset = qs.filter(price__gte=min_price).filter(price__lte=max_price)
+        elif self.request.GET.get('dmin') and self.request.GET.get('dmax'):
+            min_days = int(self.request.GET.get('dmin'))
+            max_days = int(self.request.GET.get('dmax'))
+            queryset = qs.filter(day_count__gte=min_days).filter(day_count__lte=max_days)
         else:
             queryset = qs
             # print(qs.aggregate(Max('price')))
@@ -35,8 +39,12 @@ class GroupListView(ListView):
         context.update(
             qs.aggregate(Max('price'))
         )
-        print qs.aggregate(Max('price'))
-        print qs.aggregate(Min('price'))
+        context.update(
+            qs.aggregate(Max('day_count'))
+        )
+        context.update(
+            qs.aggregate(Min('day_count'))
+        )
         context.update({
             'group_section_list': GroupSection.objects.all()
         })
