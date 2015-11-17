@@ -23,6 +23,7 @@
               <li class="excurse-section-list-item"><a href="?section={{ section.id }}"  class="excurse-section-list__link btn btn-info">{{ section.name|default:'' }}</a></li>
             {% endfor %}
             </ul>
+            {% if price__min and price__max %}
             <p class="text-center">
               <label for="amount">Диапазон цен:</label>
               <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
@@ -32,6 +33,7 @@
               <a href="{% url 'excurse:list' %}" class="js-amount-button btn btn-success ammount-button" data-min-price="{{ price__min }}"
                 data-max-price="{{ price__max }}" >Подобрать по цене</a>
             </div>
+            {% endif %}
           </div>
           <div class="clearfix"></div>
         {% endif %}
