@@ -6381,6 +6381,11 @@ textarea.error {
 .why {
   color: #3e2d84;
 }
+@media (max-device-width: 768px) {
+  .why .landing__title {
+    font-size: 18px;
+  }
+}
 .why-ul {
   list-style: none;
 }
@@ -6399,11 +6404,15 @@ textarea.error {
   }
 }
 .why-ul-li__title {
+  font-size: 16px;
   font-weight: bold;
 }
-@media (max-width: 768px) {
+.why-ul-li__text {
+  font-size: 16px;
+}
+@media (max-device-width: 768px) {
   .why-ul-li__text {
-    display: none;
+    font-size: 10px;
   }
 }
 .why-ul-li .js-why-button__show,

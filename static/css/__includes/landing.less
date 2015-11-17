@@ -38,6 +38,12 @@
 }
 .why {
   color: #3e2d84;
+  .landing__title {
+    @media (max-device-width: @screen-sm) {
+      //display: none;
+      font-size: 18px;
+    }
+  }
   &-ul {
     list-style: none;
     @media (max-width: @screen-sm) {
@@ -50,11 +56,14 @@
         text-align: center;
       }
       &__title {
+        font-size: 16px;
         font-weight: bold;
       }
       &__text {
-        @media (max-width: @screen-sm) {
-          display: none;
+        font-size: 16px;
+        @media (max-device-width: @screen-sm) {
+          //display: none;
+          font-size: 10px;
         }
       }
       .js-why-button__show, .js-why-button__hide {
