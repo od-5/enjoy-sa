@@ -22,7 +22,7 @@
                 <tr>
                   <td>{{ object.time|default:' '}}ч.</td>
                   <td>{{ object.start|default:' '}}</td>
-                  <td>{{ object.price|default:' '}}$</td>
+                  <td>{% if object.price %}от {{ object.price|default:' '}}${% endif %}{% if object.price_desc %} {{ object.price_desc|default:'' }}{% endif %}</td>
                 </tr>
               </table>
             </div>

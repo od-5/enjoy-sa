@@ -32,10 +32,10 @@ class GroupSection(models.Model):
 
 class Group(CommonPage):
     class Meta:
-        verbose_name = u'Групповой тур'
-        verbose_name_plural = u'Групповые туры'
+        verbose_name = u'Наш тур'
+        verbose_name_plural = u'Наши туры'
         app_label = 'group'
-        ordering = ['-travel_start']
+        ordering = ['-created', ]
 
     def __unicode__(self):
         return u'Тур %s, с %s по %s' % (self.title, self.travel_start, self.travel_end)
@@ -76,4 +76,4 @@ class GroupComment(Comment):
         verbose_name_plural = u'Комментарии'
         app_label = 'group'
 
-    group = models.ForeignKey(to=Group, verbose_name=u'Групповой тур')
+    group = models.ForeignKey(to=Group, verbose_name=u'Тур')

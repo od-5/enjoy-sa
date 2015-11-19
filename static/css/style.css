@@ -6412,6 +6412,7 @@ textarea.error {
 }
 .why-ul-li__text {
   font-size: 16px;
+  text-align: justify;
 }
 @media (max-device-width: 768px) {
   .why-ul-li__text {
@@ -6446,6 +6447,9 @@ textarea.error {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px;
+}
+.info-form .btn {
+  width: 400px;
 }
 .documents-item {
   margin-top: 30px;
@@ -6859,6 +6863,18 @@ textarea.error {
 }
 .groups {
   padding-bottom: 60px;
+}
+.groups-type {
+  text-align: center;
+  padding: 20px 0;
+}
+.groups-type-list {
+  list-style: none;
+  padding-left: 0;
+}
+.groups-type-list-item {
+  display: inline-block;
+  margin: 0 10px;
 }
 .groups-section-list {
   list-style: none;

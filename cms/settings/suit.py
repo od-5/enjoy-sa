@@ -30,7 +30,7 @@ SUIT_CONFIG = {
         {'label': u'Портфолио', 'app': 'portfolio'},
         {'label': u'Landing', 'app': 'landing'},
         {'label': u'Экскурсии', 'app': 'excurse'},
-        {'label': u'Групповые туры', 'app': 'group'},
+        {'label': u'Наши туры', 'app': 'group'},
         {'label': u'Журнал путешествий', 'app': 'travel'},
         {'label': u'О нас', 'app': 'about'},
         {'label': u'Вопросы и ответы', 'app': 'faq'},

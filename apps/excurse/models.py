@@ -35,6 +35,7 @@ class Excurse(CommonPage):
         verbose_name = u'Экскурсия'
         verbose_name_plural = u'Экскурсии'
         app_label = 'excurse'
+        ordering = ['-created', ]
 
     def __unicode__(self):
         return self.title
@@ -59,6 +60,7 @@ class Excurse(CommonPage):
         [SmartResize(*settings.EXCURSE_COVER_SIZE)], source='cover', format='JPEG', options={'quality': 94}
     )
     price = models.PositiveIntegerField(verbose_name=u'Стоимость', blank=True, null=True)
+    price_desc = models.TextField(verbose_name=u'Описание стоимости', blank=True, null=True)
     time = models.CharField(verbose_name=u'Длительность', max_length=250, blank=True, null=True)
     start = models.CharField(verbose_name=u'Отправка', max_length=250, blank=True, null=True)
     text = RichTextField(verbose_name=u'Текст')
