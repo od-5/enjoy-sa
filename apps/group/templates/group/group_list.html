@@ -19,7 +19,7 @@
               <li class="groups-type-list-item"><a href="{% url 'groups:list' %}" class="btn btn-warning">Все туры</a></li>
               <li class="groups-type-list-item"><a href="?type=1" class="btn btn-info">Примеры туров<span
                   class="small">  (по запросу)</span></a></li>
-              <li class="groups-type-list-item"><a href="?type=2" class="btn btn-info">Присоединиться к туру</a></li>
+              <li class="groups-type-list-item"><a href="?type=0" class="btn btn-info">Присоединиться к туру</a></li>
             </ul>
           </div>
         </div>
@@ -67,6 +67,7 @@
                     </h2>
                   </a>
                   <table class="table">
+                    {% if object.type == 0 %}
                     <tr>
                       <td>
                         <span class="glyphicon glyphicon-plane"></span>
@@ -89,8 +90,28 @@
                         <b>{{ object.seats|default:'' }}</b>
                       </td>
                     </tr>
+                    {% else %}
                     <tr>
-                      <td colspan="2" class="text-center">Стоимость тура: <b>{{ object.price|default:'' }}$</b> <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button" data-group="{{ object.id }}">Присоединиться к группе!</a></td>
+                      <td colspan="2">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <span class="table_text">Длительност тура (дней):</span>
+                        <b>{{ object.day_count|default:'' }}</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <span class="glyphicon glyphicon-usd"></span>
+                        <span class="table_text">
+                          Стоимость тура: от <b>{{ object.price|default:'' }}$</b>
+                        </span>
+                      </td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                      <td class="text-center" colspan="2">
+                        {% if object.type == 0 %}{% if object.price %}Стоимость тура: <b>{{ object.price|default:'' }}$</b>{% endif %}{% endif %}
+                        <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button" data-group="{{ object.id }}">Присоединиться к группе!</a>
+                      </td>
                     </tr>
                   </table>
                 </div>

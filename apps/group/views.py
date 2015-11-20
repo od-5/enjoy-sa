@@ -14,7 +14,10 @@ class GroupListView(ListView):
 
     def get_queryset(self):
         qs = Group.objects.all()
-        if self.request.GET.get('section'):
+        if self.request.GET.get('type'):
+            type = int(self.request.GET.get('type'))
+            queryset = qs.filter(type=type)
+        elif self.request.GET.get('section'):
             es_pk = int(self.request.GET.get('section'))
             queryset = qs.filter(groupsection__pk=es_pk)
         elif self.request.GET.get('min') and self.request.GET.get('max'):
