@@ -110,7 +110,13 @@
                     <tr>
                       <td class="text-center" colspan="2">
                         {% if object.type == 0 %}{% if object.price %}Стоимость тура: <b>{{ object.price|default:'' }}$</b>{% endif %}{% endif %}
-                        <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button" data-group="{{ object.id }}">Присоединиться к группе!</a>
+                        <a href="#js-modal-ticket" class="btn btn-warning js-ticket-button" data-group="{{ object.id }}">
+                        {% if object.type == 0 %}
+                          Присоединиться к группе!
+                        {% else %}
+                          Узнать подробности
+                        {% endif %}
+                        </a>
                       </td>
                     </tr>
                   </table>
