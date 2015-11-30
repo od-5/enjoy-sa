@@ -19,7 +19,7 @@ ALLOWED_HOSTS = ['enjoy-sa.ru', 'www.enjoy-sa.ru', 'enjoy-south-africa.ru', 'www
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@enjoy-africa.ru'
 EMAIL_HOST = 'smtp.fullspace.ru'
-EMAIL_HOST_USER = 'admin@enjoy-africa.ru'
+EMAIL_HOST_USER = 'admin@enjoy-sa.ru'
 EMAIL_HOST_PASSWORD = 'alena2010'
 
 ROOT_URLCONF = 'cms.urls'
