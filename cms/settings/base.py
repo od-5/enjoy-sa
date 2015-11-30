@@ -17,7 +17,7 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['enjoy-sa.ru', 'www.enjoy-sa.ru', 'enjoy-south-africa.ru', 'www.enjoy-south-africa.ru']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'admin@enjoy-africa.ru'
+DEFAULT_FROM_EMAIL = 'admin@enjoy-sa.ru'
 EMAIL_HOST = 'smtp.fullspace.ru'
 EMAIL_HOST_USER = 'admin@enjoy-sa.ru'
 EMAIL_HOST_PASSWORD = 'alena2010'
