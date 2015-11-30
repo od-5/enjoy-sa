@@ -6481,32 +6481,9 @@ textarea.error {
     text-align: center;
   }
 }
-.why2-item-number {
-  vertical-align: middle;
-  width: 15%;
-  display: table-cell;
-}
-@media (max-width: 768px) {
-  .why2-item-number {
-    display: block;
-    width: 100%;
-  }
-}
-.why2-item-number__text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  background: #ffa500;
-  display: inline-block;
-  width: 65px;
-  height: 65px;
-  line-height: 55px;
-  text-align: center;
-  border-radius: 50%;
-  border: 5px solid #fff;
-}
 .why2-item__text {
-  width: 85%;
+  font-size: 18px;
+  text-align: justify;
   display: table-cell;
   padding: 15px 0;
 }

@@ -114,9 +114,9 @@
       </div>
       <div class="row">
         {% for item in why2_list %}
-        <div class="col-lg-6">
+        <div class="col-lg-10 col-lg-offset-1">
           <div class="why2-item">
-            <div class="why2-item-number"><span class="why2-item-number__text">{{ forloop.counter }}</span></div>
+{#            <div class="why2-item-number"><span class="why2-item-number__text">{{ forloop.counter }}</span></div>#}
             <p class="why2-item__text">
 {#              {{ item.text|safe|default:'' }}#}
               {% inplace_edit 'item.text|safe|default:""' %}
