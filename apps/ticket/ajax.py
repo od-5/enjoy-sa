@@ -28,7 +28,7 @@ def ticket(request):
             else:
                 message = u'Имя: %s\nE-mail: %s\n' % (ticket.name, ticket.email)
             send_mail(
-                u'enjoy-africa.ru - Заявка с сайта',
+                u'enjoy-sa.ru - Заявка с сайта',
                 message,
                 settings.DEFAULT_FROM_EMAIL,
                 [email, ]
