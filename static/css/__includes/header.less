@@ -4,13 +4,27 @@
   -webkit-background-size: cover;
   background-size: cover;
   background-image: url(../img/menu/menu__bg.jpg);
+  .video {
+    &-icon {
+      position: absolute;
+      z-index: 3;
+      font-size: 70px;
+      color: #ffa500;
+      left: 47%;
+      top: 75%;
+      cursor: pointer;
+      &:hover {
+        text-shadow: 0 0 3px #ffa500;
+      }
+    }
+  }
   &-travel {
     background-image: url(../img/header-page__bg.jpg);
     min-height: 390px;
   }
   &-home {
     background-image: url(../img/header__bg.jpg);
-    @media (max-device-width: @screen-sm) {
+    @media (max-width: @screen-sm) {
       background-image: url(../img/header__bg_sm.jpg);
     }
     .bgvideo {

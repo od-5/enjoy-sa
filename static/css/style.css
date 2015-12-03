@@ -6243,6 +6243,18 @@ textarea.error {
   background-size: cover;
   background-image: url(../img/menu/menu__bg.jpg);
 }
+.header .video-icon {
+  position: absolute;
+  z-index: 3;
+  font-size: 70px;
+  color: #ffa500;
+  left: 47%;
+  top: 75%;
+  cursor: pointer;
+}
+.header .video-icon:hover {
+  text-shadow: 0 0 3px #ffa500;
+}
 .header-travel {
   background-image: url(../img/header-page__bg.jpg);
   min-height: 390px;
@@ -6250,7 +6262,7 @@ textarea.error {
 .header-home {
   background-image: url(../img/header__bg.jpg);
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .header-home {
     background-image: url(../img/header__bg_sm.jpg);
   }

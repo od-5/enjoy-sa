@@ -247,4 +247,20 @@ $(function() {
     $("#days").val( $( "#slider-range-days" ).slider( "values", 0 )+ " - " + $( "#slider-range-days" ).slider( "values", 1 ) );
   }
 
+  $('.video-icon').click(function(e){
+    if($(this).hasClass('glyphicon-volume-up')){
+      $(this).removeClass('glyphicon-volume-up');
+      $(this).addClass('glyphicon-volume-off');
+      $('.bgvideo').prop('muted', true);
+    } else {
+      if($(this).hasClass('glyphicon-volume-off')){
+        $(this).removeClass('glyphicon-volume-off');
+        $(this).addClass('glyphicon-volume-up');
+        $('.bgvideo').prop('muted', false);
+      }
+    }
+
+
+  });
+
 });
