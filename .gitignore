@@ -1,3 +1,5 @@
+/.htaccess
+/index.html
 /apps/seo/migrations
 .idea/
 *.pyc
