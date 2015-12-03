@@ -6237,6 +6237,7 @@ textarea.error {
   padding: 10px;
 }
 .header {
+  position: relative;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
@@ -6249,13 +6250,26 @@ textarea.error {
 .header-home {
   background-image: url(../img/header__bg.jpg);
 }
-@media (max-width: 768px) {
+@media (max-device-width: 768px) {
   .header-home {
     background-image: url(../img/header__bg_sm.jpg);
   }
 }
+.header-home .bgvideo {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header-home-container {
+  position: relative;
+  z-index: 2;
+}
 .header-home .navbar {
   background-color: rgba(241, 241, 241, 0.57);
+  position: relative;
+  z-index: 2;
 }
 .header .user-profile__link {
   font-size: 14px;

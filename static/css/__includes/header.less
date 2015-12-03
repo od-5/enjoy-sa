@@ -1,5 +1,5 @@
 .header {
-
+  position: relative;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
@@ -10,11 +10,27 @@
   }
   &-home {
     background-image: url(../img/header__bg.jpg);
-    @media (max-width: @screen-sm) {
+    @media (max-device-width: @screen-sm) {
       background-image: url(../img/header__bg_sm.jpg);
+    }
+    .bgvideo {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      //@media (max-device-width: @screen-sm) {
+      //  display: none;
+      //}
+    }
+    &-container {
+      position: relative;
+      z-index: 2;
     }
     .navbar {
       background-color: rgba(241, 241, 241, 0.57);
+      position: relative;
+      z-index: 2;
     }
   }
   .user {

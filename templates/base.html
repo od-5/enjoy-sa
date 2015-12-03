@@ -37,6 +37,11 @@
 <body>
   <div class="wrapper">
     <header class="header {% block header_class %}{% endblock %}">
+    {% if HOME_PAGE %}
+      <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" class="bgvideo" id="bgvideo">
+        <source src="{{ STATIC_URL }}uar.mp4" type="video/mp4"></source>
+      </video>
+    {% endif %}
       <nav class="navbar navbar-default">
         <div class="container">
           <div class="col-lg-2">
@@ -70,7 +75,7 @@
       {% block head %}
       {% endblock %}
       {% if HOME_PAGE %}
-      <div class="container">
+      <div class="container header-home-container">
         <div class="col-lg-10 col-lg-offset-1">
           <div class="header-text text-center">
           {% if header_1 %}
