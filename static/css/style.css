@@ -6225,6 +6225,9 @@ textarea.error {
 .bold {
   font-weight: bold;
 }
+.navbar.navbar-inverse.navbar-fixed-top {
+  position: relative !important;
+}
 #js-modal-auth,
 #js-modal-ticket {
   display: none;
