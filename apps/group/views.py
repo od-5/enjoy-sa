@@ -4,7 +4,7 @@ from django.db.models import Max, Min
 from django.http import HttpResponseRedirect
 from django.views.generic import DetailView, ListView
 from .forms import GroupCommentForm
-from .models import Group, GroupSection
+from .models import Group, GroupSection, GroupBanner
 
 __author__ = 'alexy'
 
@@ -51,6 +51,10 @@ class GroupListView(ListView):
         context.update({
             'group_section_list': GroupSection.objects.all()
         })
+        if GroupBanner.objects.all().count() != 0:
+            context.update({
+                'group_banner_list': GroupBanner.objects.all()
+            })
         return context
 
 

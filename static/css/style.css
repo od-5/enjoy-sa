@@ -6845,6 +6845,12 @@ textarea.error {
 .groups {
   padding-bottom: 60px;
 }
+.groups-banner {
+  margin: 10px 0;
+}
+.groups-banner__image {
+  max-width: 100%;
+}
 .groups-type {
   text-align: center;
   padding: 20px 0;

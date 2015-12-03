@@ -19,6 +19,12 @@ def get_image_path(self, filename):
     return os.path.join('group', filename)
 
 
+def get_banner_path(self, filename):
+    extension = filename.split('.')[-1]
+    filename = "%s.%s" % (uuid.uuid4(), extension)
+    return os.path.join('banner', filename)
+
+
 class GroupSection(models.Model):
     class Meta:
         verbose_name = u'Направление'
@@ -88,3 +94,16 @@ class GroupComment(Comment):
         app_label = 'group'
 
     group = models.ForeignKey(to=Group, verbose_name=u'Тур')
+
+
+class GroupBanner(models.Model):
+    class Meta:
+        verbose_name = u'Баннер'
+        verbose_name_plural = u'Баннеры'
+        app_label = 'group'
+
+    def __unicode__(self):
+        return self.name
+
+    name = models.CharField(verbose_name=u'Название', max_length=256)
+    image = models.ImageField(verbose_name=u'Обложка', upload_to=get_banner_path)

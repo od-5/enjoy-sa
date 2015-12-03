@@ -4,6 +4,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+        {% if group_banner_list %}
+          {% for item in group_banner_list %}
+          <div class="groups-banner">
+            <img src="{{ item.image.url }}" alt="{{ item.name|default:'' }}" class="groups-banner__image">
+          </div>
+          {% endfor %}
+        {% else %}
           <div class="page__title">
             <h1>{{ page.title|default:'Наши туры' }}</h1>
           </div>
@@ -12,6 +19,7 @@
             {{ page.text|safe|default:'' }}
           </div>
           {% endif %}
+        {% endif %}
         </div>
         <div class="col-lg-12">
           <div class="groups-type">
