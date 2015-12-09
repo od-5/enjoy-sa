@@ -12,7 +12,7 @@
 {% block breadcrumbs %}{% endblock %}
 
 {% block content %}
-  {% if request.path == '/admin/'%}
+  {% if request.path == '/admin/' and user.is_superuser %}
   <div class="calendar">
     <script>
       $(function(){
