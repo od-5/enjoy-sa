@@ -13,13 +13,14 @@ from core.models import User
 
 __author__ = 'alexy'
 
+
 def get_image_path(self, filename):
     extension = filename.split('.')[-1]
     filename = "%s.%s" % (uuid.uuid4(), extension)
     return os.path.join('travel', filename)
 
 
-class Travel(Common):
+class Travel(CommonPage):
     class Meta:
         verbose_name = u'Статья'
         verbose_name_plural = u'Статьи'
@@ -42,7 +43,7 @@ class Travel(Common):
     pic.allow_tags = True
 
     user = models.ForeignKey(to=User, verbose_name=u'Пользователь')
-    title = models.CharField(verbose_name=u'Заголовок', max_length=255)
+    # title = models.CharField(verbose_name=u'Заголовок', max_length=255)
     text = RichTextField(verbose_name=u'Текст')
     cover = models.ImageField(verbose_name=u'Обложка', upload_to=get_image_path)
     cover_resize = ImageSpecField(
