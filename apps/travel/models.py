@@ -28,10 +28,11 @@ class Travel(CommonPage):
 
     def __unicode__(self):
         return self.title
-
-    def save(self):
-        self.slug = slugify(self.title)
-        super(Travel, self).save()
+    #
+    # def save(self):
+    #     if not self.slug:
+    #         self.slug = slugify(self.title)
+    #     super(Travel, self).save()
 
     def get_absolute_url(self):
         return reverse('travels:detail', kwargs={'slug': self.slug})
@@ -49,7 +50,7 @@ class Travel(CommonPage):
     cover_resize = ImageSpecField(
         [SmartResize(*settings.TRAVEL_COVER_SIZE)], source='cover', format='JPEG', options={'quality': 94}
     )
-    slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
+    slug = models.SlugField(max_length=100, verbose_name=u'url')
 
 
 class TravelComment(Comment):

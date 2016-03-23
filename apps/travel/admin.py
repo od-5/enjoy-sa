@@ -7,6 +7,7 @@ __author__ = 'alexy'
 
 class TravelAdmin(admin.ModelAdmin):
     list_display = ('title', 'pic')
+    prepopulated_fields = {'slug': ('title',)}
 
 
 class TravelCommentAdmin(admin.ModelAdmin):

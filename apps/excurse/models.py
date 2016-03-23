@@ -40,9 +40,9 @@ class Excurse(CommonPage):
     def __unicode__(self):
         return self.title
 
-    def save(self):
-        self.slug = slugify(self.title)
-        super(Excurse, self).save()
+    # def save(self):
+    #     self.slug = slugify(self.title)
+    #     super(Excurse, self).save()
 
     def pic(self):
         return '<img src="%s" width="170"/>' % self.cover_resize.url
@@ -64,7 +64,7 @@ class Excurse(CommonPage):
     time = models.CharField(verbose_name=u'Длительность', max_length=250, blank=True, null=True)
     start = models.CharField(verbose_name=u'Отправка', max_length=250, blank=True, null=True)
     text = RichTextField(verbose_name=u'Текст')
-    slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True, null=True)
+    slug = models.SlugField(max_length=100, verbose_name=u'url')
 
 
 class ExcursePhoto(models.Model):

@@ -15,6 +15,7 @@ class ExcursePhotoInline(admin.TabularInline):
 class ExcurceAdmin(admin.ModelAdmin):
     inlines = (ExcursePhotoInline,)
     list_display = ['title', 'price', 'time', 'start', 'pic']
+    prepopulated_fields = {'slug': ('title',)}
 
 
 class ExcurseCommentAdmin(admin.ModelAdmin):

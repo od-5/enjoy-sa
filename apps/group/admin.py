@@ -9,6 +9,7 @@ class GroupAdmin(admin.ModelAdmin):
     list_display = ['title', 'reserved', 'type', 'seats', 'price', 'travel_start', 'travel_end', 'pic']
     filter_horizontal = ['groupsection',]
     list_filter = ('type', 'groupsection', )
+    prepopulated_fields = {'slug': ('title',)}
 
 
 class GroupCommentAdmin(admin.ModelAdmin):

@@ -51,7 +51,7 @@ class Group(CommonPage):
             return u'Тур - %s' % self.title
 
     def save(self):
-        self.slug = slugify(self.title)
+        # self.slug = slugify(self.title)
         if self.travel_start and self.travel_end:
             delta = self.travel_end - self.travel_start
             self.day_count = delta.days
@@ -83,7 +83,7 @@ class Group(CommonPage):
     )
     travel_start = models.DateField(verbose_name=u'Прибытие', blank=True, null=True)
     travel_end = models.DateField(verbose_name=u'Отъезд', blank=True, null=True)
-    slug = models.SlugField(max_length=100, verbose_name=u'url', blank=True)
+    slug = models.SlugField(max_length=100, verbose_name=u'url')
     day_count = models.PositiveIntegerField(default=0, verbose_name=u'Количество дней')
 
 
